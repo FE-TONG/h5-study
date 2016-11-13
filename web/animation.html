@@ -10,27 +10,21 @@
 
 	<style type="text/css">
 
-		body{font-size:20px;font-family:"Î¢ÈíÑÅºÚ";}
-		div,h2,p{font-family:"Î¢ÈíÑÅºÚ";font-size:24px; border-radius:10px;}
+		body{font-size:20px;font-family:"microsoft yahei";}
+		div,h2,p{font-family:"microsoft yahei";font-size:24px; border-radius:10px;}
 		hr{border:2px dashed red;margin:20px auto;}
 		.hr1{border:1px dashed blue;}
 		h2{font-size:32px;color:blue;}
 		.p0{color:red;}
-		.p1{color:#090;}/*µ­Ä«ÂÌ*/
-		.p2{color:yellow;}/*div:hover ×ÖÌåÑÕÉ«*/
+		.p1{color:#090;}
+		.p2{color:yellow;}
 		.p3{color:blue;}
 
 
 		#main{width:800px;height:2500px;margin:0px auto;border:2px solid #09f;
 				position:relative;}
-
-		/* ±³¾° */
 		#bigbox{width:328px; height:488px; margin:50px auto; background:#112233; 
-				position:relative; }/*¸¸¼¶ Ïà¶Ô¶¨Î»*/
-
-
-
-
+				position:relative; }
 		.box {width: 300px; height: 460px; position: relative; background: #112233;
 			display: inline-block; margin: 15px 15px; cursor: pointer; color: #09c;
 			text-align:center; box-shadow: inset 0 0 0 10px #112233;
@@ -39,7 +33,6 @@
 			animation-iteration-count:infinite;
 			animation-direction:alternate;
 		}
-		/* ÎÄ×Ö¶¯»­ */
 		@keyframes move0{
 
 			from{color:#fff;}
@@ -51,7 +44,6 @@
 			background:url(images/2345.png) no-repeat center center;
 			animation:c 1.5s linear;
 			animation-iteration-count:infinite;}
-		/* Ðý×ª·ç³µ¶¯»­ */
 		@keyframes c{
 		
 			from{transform:rotate(0deg);}
@@ -78,46 +70,45 @@
 
 		.box svg line.left,
 		.box svg line.right {stroke-dasharray: 490 400;}
-		/* ÉÏÏß */
 		.box svg line.top{
 			animation:move1 2s;
 			animation-iteration-count:infinite;
 			animation-direction:alternate;
-		}/* ÏÂÏß */
+		}
 		.box svg line.bottom {
 			animation:move2 2s;
 			animation-iteration-count:infinite;
 			animation-direction:alternate;
-		}/* ×óÏß */
+		}
 		.box svg line.left {
 			animation:move3 2s;
 			animation-iteration-count:infinite;
 			animation-direction:alternate;
-		}/* ÓÒÏß */
+		}
 		.box svg line.right {
 			animation:move4 2s;
 			animation-iteration-count:infinite;
 			animation-direction:alternate;
 		}
-		/* ÉÏÏß¶¯»­ */
+		
 		@keyframes move1{
 		
 			from{stroke: #ecf0f1; transform: translateX(0px);}
 			to  {stroke: #09d; transform: translateX(-600px);}
 		
-		}/* ÏÂÏß¶¯»­ */
+		}
 		@keyframes move2{
 		
 			from{stroke: #ecf0f1; transform: translateX(0px);}
 			to  {stroke: #09d; transform: translateX(600px);}
 		
-		}/* ×óÏß¶¯»­ */
+		}
 		@keyframes move3{
 		
 			from{stroke: #ecf0f1; transform: translateY(0px);}
 			to  {stroke: #09d; transform: translateY(920px);}
 		
-		}/* ÓÒÏß¶¯»­ */
+		}
 		@keyframes move4{
 		
 			from{stroke: #ecf0f1; transform: translateY(0px);}
@@ -132,25 +123,25 @@
  </head>
  <body>
 
-	<!-- main ¿ªÊ¼ -->
+
 	<div id="main">
 
-		<!-- ±êÌâ -->
-		<h2><strong>CSS3</strong>~~¶¯»­ animation</h2>
-		<!-- ±êÌâ -->
+		<!-- ï¿½ï¿½ï¿½ï¿½ -->
+		<h2><strong>CSS3</strong>~~ï¿½ï¿½ï¿½ï¿½ animation</h2>
+		<!-- ï¿½ï¿½ï¿½ï¿½ -->
 
-		<!-- ÖªÊ¶µãËµÃ÷ ¿ªÊ¼ -->
-		<p class="p1"><strong><span class="p0">1¡¢</span> transition</strong>µÄº¬Òå</p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¹ý¶É¾ÍÊÇ¸øÔªËØÑùÊ½µÄ¸Ä±äÌí¼ÓÒ»¸ö¹ý³Ì¡£
-		<p class="p1"><strong><span class="p0">2¡¢</span> transition</strong>µÄ×é³É</p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a¡¢Òª¸Ä±äµÄcssÊôÐÔ &nbsp;&nbsp; b¡¢¸Ä±äÊ±³¤¡£
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>¼´(1)</span> transition: ÊôÐÔ Ê±¼ä ;</p>
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition: ÊôÐÔ Ê±¼ä , ÊôÐÔ Ê±¼ä , ÊôÐÔ Ê±¼ä , ÊôÐÔ Ê±¼ä , ...</p>
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all Ê±¼ä ;</p>
-		<!-- ÖªÊ¶µãËµÃ÷ ½áÊø -->
+		<!-- ÖªÊ¶ï¿½ï¿½Ëµï¿½ï¿½ ï¿½ï¿½Ê¼ -->
+		<p class="p1"><strong><span class="p0">1ï¿½ï¿½</span> transition</strong>ï¿½Äºï¿½ï¿½ï¿½</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½É¾ï¿½ï¿½Ç¸ï¿½Ôªï¿½ï¿½ï¿½ï¿½Ê½ï¿½Ä¸Ä±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ì¡ï¿½
+		<p class="p1"><strong><span class="p0">2ï¿½ï¿½</span> transition</strong>ï¿½ï¿½ï¿½ï¿½ï¿½</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aï¿½ï¿½Òªï¿½Ä±ï¿½ï¿½cssï¿½ï¿½ï¿½ï¿½ &nbsp;&nbsp; bï¿½ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>ï¿½ï¿½(1)</span> transition: ï¿½ï¿½ï¿½ï¿½ Ê±ï¿½ï¿½ ;</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition: ï¿½ï¿½ï¿½ï¿½ Ê±ï¿½ï¿½ , ï¿½ï¿½ï¿½ï¿½ Ê±ï¿½ï¿½ , ï¿½ï¿½ï¿½ï¿½ Ê±ï¿½ï¿½ , ï¿½ï¿½ï¿½ï¿½ Ê±ï¿½ï¿½ , ...</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all Ê±ï¿½ï¿½ ;</p>
+		<!-- ÖªÊ¶ï¿½ï¿½Ëµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
 		<hr class="hr1" />
 
-		<!-- ¶¯»­box -->
+		<!-- ï¿½ï¿½ï¿½ï¿½box -->
 		<div id="bigbox">
 			<div class="box">
 				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -164,7 +155,7 @@
 				<span>animation</span>
 			</div>
 		</div>
-		<!-- ¶¯»­box -->
+		<!-- ï¿½ï¿½ï¿½ï¿½box -->
 		
 
 
@@ -177,7 +168,7 @@
 
 
 	</div>
-	<!-- main ½áÊø -->
+	<!-- main ï¿½ï¿½ï¿½ï¿½ -->
 
 	
 

@@ -1,32 +1,28 @@
 <!doctype html>
 <html>
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
-  <meta name="Generator" content="EditPlus"/>
-  <meta name="Author" content=""/>
-  <meta name="Keywords" content=""/>
-  <meta name="Description" content=""/>
+  <meta charset="UTF-8"/>
   <title>HTML5~~audio&video</title>
 
 	<style type="text/css">
 	
-		body{font-family:"Î¢ÈíÑÅºÚ";}
-		div,h2,p{font-family:"Î¢ÈíÑÅºÚ";font-size:24px;}
+		body{font-family:"microsoft yahei";}
+		div,h2,p{font-family:"microsoft yahei";font-size:24px;}
 		hr{border:2px dashed red;margin:20px auto;}
 		.hr1{border:1px dashed blue;}
 		h2{font-size:32px; color:blue;}
 		.p0{color:red;}
-		.p1{color:#090;}/*µ­Ä«ÂÌ*/
-		.p2{color:yellow;}/*div:hover ×ÖÌåÑÕÉ«*/
+		.p1{color:#090;}
+		.p2{color:yellow;}
 
 
 		#main{width:800px;height:1500px;margin:0px auto;border:2px solid #09f;
 				position:relative; border-radius:10px;}
 
-		/*video*/
+	
 		#mp4{width:500px; margin:0px auto; background:#222; padding-top:6px;border-radius:5px;}
 		video{width:500px; cursor:pointer; }
-		/*°´Å¥À¸*/
+	
 		#btn{width:488px; height:60px; background:#000; margin:0px auto;}
 
 		#btn0{width:50px; height:50px; border:none; outline:none;
@@ -40,8 +36,8 @@
 		#btn0:hover{background:url(images/Prev.png) no-repeat;}
 		#btn2:hover{background:url(images/Next.png) no-repeat;}
 
-		/*audio*/
-		#mp3{width:460px; height:130px; background:#015D55; border-radius:4px;	/*ÔİÍ£*/
+	
+		#mp3{width:460px; height:130px; background:#015D55; border-radius:4px;	
 				position:relative; margin:0px auto; border:2px solid black;}
 		#btns{display:inline-block; position:absolute; bottom:14px; right:55px;}
 		#mp3 p{position:absolute; right:120px; top:6px; font-size:20px; color:#fff;}
@@ -49,9 +45,9 @@
 				cursor:pointer; border-radius:4px; outline:none;}
 		#btn3{margin-left:10px;}
 		#btn3, #btn4{width:40px; height:40px; border-radius:20px;}
-		#btn6{width:62px; height:62px; border-radius:31px;}/*²¥·Å/ÔİÍ£°´Å¥*/
+		#btn6{width:62px; height:62px; border-radius:31px;}
 
-		/*ÏÔÊ¾ºÍÒş²Ø°´Å¥*/
+		
 		#btn7{width:40px; height:40px; background:blue; border:none;
 				border-radius:20px; color:#fff; cursor:pointer; outline:none;}
 
@@ -64,11 +60,11 @@
 	<div id="main">
 		<h2>HTML5~~audio&video</h2>
 		<p>
-        	<span class="p0">ÎÂÜ°ÌáÊ¾£º</span>
-            audio&videoÊ¹ÓÃµÄÊÇMP3¡¢MP4ÍâÁ´£¬²¥·ÅµÄÊ±ºò¿ÉÄÜ³öÏÖ²»ÎÈ¶¨µÄÇé¿ö£¡µ«¹¦ÄÜÈÔÔÚ
+        	<span class="p0">æ¸©é¦¨æç¤º:</span>
+            audio&videoä½¿ç”¨çš„æ˜¯MP3ã€MP4å¤–é“¾ï¼Œæ’­æ”¾çš„æ—¶å€™å¯èƒ½å‡ºç°ä¸ç¨³å®šçš„æƒ…å†µï¼ä½†åŠŸèƒ½ä»åœ¨
         </p>
-		<h2>1¡¢audio------------------------------------------
-			<input id="btn7" type="button" value="Òş²Ø" />
+		<h2>1ã€audio------------------------------------------ 
+			<input id="btn7" type="button" value="éšè—" />
 		</h2><br /><br />
 		
 		<div id="mp3">
@@ -78,21 +74,21 @@
 			<audio id="myAudio" width="500" onclick="pl()" autoplay>
 				<source src="http://sc.111ttt.com/up/mp3/272570/7E995357EE42EACCE4897B737BC17390.mp3" type="audio/mp3"/>
 			</audio>
-			<p>ÔÛÃÇ½á»é°É - Æë³¿</p>
+			<p>å’±ä»¬ç»“å©šå§ - é½æ™¨</p>
 			<div id="btns">
-				<input id="btn3" type="button" value="²¥·Å" onclick="playMusic()"/>
-				<input id="btn4" type="button" value="ÔİÍ£" onclick="pauseMusic()"/>
-				<input id="btn5" type="button" value="»ñÈ¡Ê±¼ä" onclick="myPlayTime3()"/>
-				<input id="btn6" type="button" value="²¥·Å|ÔİÍ£" onclick="playPause2()"/>
+				<input id="btn3" type="button" value="æ’­æ”¾" onclick="playMusic()"/>
+				<input id="btn4" type="button" value="æš‚åœ" onclick="pauseMusic()"/>
+				<input id="btn5" type="button" value="è·å–æ—¶é—´" onclick="myPlayTime3()"/>
+				<input id="btn6" type="button" value="æ’­æ”¾|æš‚åœ" onclick="playPause2()"/>
 			</div>
 			
 		</div><br /><br />
 
-		<h2>2¡¢video</h2>
+		<h2>2ã€video</h2>
 
 		<div id="mp4">
 			<video id="myVideo" Poster="http://i2.tietuku.com/832c63053110fad6.png" width="500" onclick="p()">
-				<source src="http://dl76.80s.la:920/1408/[µË×ÏÆå]Ï²»¶Äã/[µË×ÏÆå]Ï²»¶Äã_bd.mp4" type="video/mp4"/>
+				<source src="http://dl76.80s.la:920/1408/[é‚“ç´«æ£‹]å–œæ¬¢ä½ /[é‚“ç´«æ£‹]å–œæ¬¢ä½ _bd.mp4" type="video/mp4"/>
 			</video>
 			<div id="btn">
 				<input id="btn0" type="button" value="" onclick="myPlayTime1()"/>
@@ -101,8 +97,8 @@
 			</div>
 		</div>
 
-		<p style="height:30px; font-size:14px; text-align:center;">µã»÷ÆÁÄ»Òà¿É²Ù×÷</p>
-		<p><span class="p0">JSÈçÏÂ:(< input id="btn1" onclick="playPause()"/>)</span><br / ><br / >
+		<p style="height:30px; font-size:14px; text-align:center;">ç‚¹å‡»å±å¹•äº¦å¯æ“ä½œ</p>
+		<p><span class="p0">JSå¦‚ä¸‹:(< input id="btn1" onclick="playPause()"/>)</span><br / ><br / >
 			var myBtn1 = document.getElementById("btn1");<br / >
 			function playPause(){<br / >
 				&nbsp;&nbsp;&nbsp;if(myVideo.paused){<br / >
@@ -114,7 +110,7 @@
 				&nbsp;&nbsp;&nbsp;}<br / >
 			}<br / >
 		</p>
-		<span class="p0">Audio  JSÍ¬Àí</span>
+		<span class="p0">Audio  jsåŒç†</span>
 		
 	</div>
 
@@ -131,7 +127,7 @@
 		function p(){
 			if(myVideo.paused){
 				myVideo.play();
-				myBtn1.style.background="url(images/Pause.png) no-repeat";	//¸ü»»°´Å¥±³¾°
+				myBtn1.style.background="url(images/Pause.png) no-repeat";	
 			}else{
 				myVideo.pause();
 				myBtn1.style.background="url(images/Play.png) no-repeat";
@@ -148,7 +144,7 @@
 			}
 		}
 
-		function myPlayTime1(){		//»ñÈ¡²¥·ÅÊ±¼ä
+		function myPlayTime1(){		
 			myVideo.currentTime=35;			
 		}
 
@@ -183,10 +179,13 @@
 
 		
 
-		//Òş²ØMP3²¥·ÅÆ÷
+		//éšè—MP3æ’­æ”¾å™¨
 
 		window.onload=function(){
-		
+			var message = {
+				show:"æ˜¾ç¤º",
+				hide:"éšè—"
+			}
 			var oBtn7 = document.getElementById("btn7");
 			var oMp3 = document.getElementById("mp3");
 
@@ -196,10 +195,10 @@
 
 				if(oMp3.style.opacity==1){
 					oMp3.style.opacity = 0;
-					this.value = 'ÏÔÊ¾';
+					this.value = message.show;
 				}else{
 					oMp3.style.opacity = 1;
-					this.value = 'Òş²Ø';
+					this.value = message.hide;
 				}
 		
 			};
