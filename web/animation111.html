@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>animation -@keyframes</title>
+  <style>
+	*{padding:0px;margin:0px;}
+	li{
+		list-style:none;
+	}
+	#box,.box2{
+		margin:0px auto;
+		width:600px;height:150px;
+		position:relative;padding-top:20px;padding-bottom:20px;overflow:hidden;padding-left:15px;
+		padding-right:15px;
+	}
+	ul.list{width:1920px; height:150px; 
+			position:absolute; left:0px; top:20px;
+			animation:slide 12s linear; 							/*定义动画slide*/
+			animation-iteration-count:infinite;}
+	@keyframes slide{
+		0%   {left:0px;}
+		100% {left:-800px;}
+	}
+	 ul.list li{width:150px;height:150px;float:left;border:5px solid #fff;}
+	/*box2倒影框 样式覆盖重写 X轴旋转-110度，X轴放大1.07倍，透明度0.2*/
+		.box2{margin:50px auto; opacity:0.2;
+			transform:rotateX(-110deg) scaleX(1.07);}	/*transform可以连着写*/
+		#box:hover ul.list{animation-name:slide;animation-play-state: paused;}
+  </style>
+ </head>
+ <body>
+	<div id='box'>
+		<ul class='list'>
+			<li><img src='images/pic1.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic2.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic3.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic4.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic5.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic1.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic2.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic3.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic4.jpg' width='150' height='150' /></li>
+			<li><img src='images/pic5.jpg' width='150' height='150' /></li>
+		</ul>
+	</div>
+	<div class="box2">	
+			<ul class="list">
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li> 
+            </ul>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3~~border-image</title>
+
+	<style type="text/css">
+		div,h2,p{font-family:"微软雅黑";font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		h2{font-size:32px; color:blue;}
+		.p0{color:red;}
+		.p2{color:#25AD3F;}
+		.p3{color:#09d;}
+		.div1{border:2px solid #aaa; width:750px; height:150px; margin:0px 25px 0px; border-radius:5px;}
+		.div2{border:2px solid #aaa; width:750px; height:150px; margin:5px 25px 100px; border-radius:5px;}
+
+
+		.main{width:800px; height:3200px; margin:0px auto; border:2px solid #09f; border-radius:10px;}
+			
+		.left{width:300px; height:2800px; margin-left:50px; float:left;}
+		.right{width:400px; height:2800px; float:right;}
+
+		.bdImg0{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:13px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:1; margin:50px;
+				position:relative;}
+		.bdImg0 span{color:#666;}
+		.bdImg0 span.sp1{position:absolute; left:86px; top:8px;}
+		.bdImg0 span.sp2{position:absolute; left:173px; top:84px;}
+		.bdImg0 span.sp3{position:absolute; left:93px; top:160px;}
+		.bdImg0 span.sp4{position:absolute; left:14px; top:84px;}
+
+		.bdImg{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:60px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:1; margin:50px;}
+
+		.bdImg2{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:40px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin:50px;
+				border-image-repeat:stretch;}
+
+		.bdImg3{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:50px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin:50px;
+				border-image-repeat:repeat;}
+		.bdImg4{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:50px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin:50px;
+				border-image-repeat:round;}
+		.bdImg5{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:50px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin:100px 50px 50px;
+				border-image-repeat:round;
+				border-image-outset:50px;}
+		.bdImg6{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border.png);
+				border-image-width:50px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin-left:50px;
+				border-image-repeat:round;
+				border-image-outset:50px;
+				}
+		.bdImg7{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border-images.png);
+				border-image-width:50px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:27; margin:50px 50px 0px;
+				border-image-repeat:round;
+				border-image-outset:50px;
+				}
+		.bdImg8{width:200px; height:200px; background:#92C6F3;
+				border-image-source:url(images/border-images.png);
+				border-image-width:20px;   /* 每条边框宽度  容纳图片 */
+				border-image-slice:12; margin:150px 50px 0px;
+				border-image-repeat:round;
+				}
+
+
+
+	</style>
+	</style>
+
+ </head>
+ <body>
+
+	
+	<div class="main">
+
+		<h2>CSS3~~border-image</h2>
+
+		<p>在CSS3中的属性border-image，格式如下：</p>
+
+		<p class="p0"><strong>border-image-:</strong>地址、 宽度、 切割、 重复、 外围;</p>
+
+		<p class="p2"><strong>(1)border-image-source:</strong>	<span class="p3">url(images/border.png);</span></p>
+		<p class="p2"><strong>(2)border-image-width:</strong>	<span class="p3">值;</span></p>
+		<p class="p2"><strong>(3)border-image-slice:</strong>	<span class="p3">值;</span></p>
+		<p class="p2"><strong>(4)border-image-repeat:</strong>	<span class="p3">stretch、repeat、round;</span></p>
+		<p class="p2"><strong>(5)border-image-outset:</strong>	<span class="p3">值;</span></p>
+		
+		<hr></hr>
+	
+		<div class="left">
+			<div class="bdImg0"><span class="sp1">12</span><span class="sp2">3</span>
+				<span class="sp3">6</span><span class="sp4">9</span>
+			</div>
+			<div class="bdImg"></div>
+			<div class="bdImg2"></div>
+			<div class="bdImg3"></div>
+			<div class="bdImg4"></div>
+			<div class="bdImg5"></div>
+			<div class="bdImg6"></div><br /><br /><br /><br />
+			<div class="bdImg7"></div>
+			<div class="bdImg8"></div>
+		</div>
+
+		<div class="right">
+			<br /><br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">13px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">1px;</span></p>
+			
+			<br /><br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">60px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">1px;</span></p>
+			
+			<br /><br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">40px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">27px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">stretch;</span></p>
+			
+			<br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">50px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">27px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">repeat;</span></p>
+			
+			<br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">50px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">27px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">round;</span></p>
+			
+			<br /><br /><br /><br /><br /><br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">50px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">27px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">round;</span></p>
+			<p class="p2"><strong>border-image-outset:</strong><span class="p3">50px;</span></p>
+			
+			
+			<br /><br /><br /><br /><br />
+			<p class="p2"><strong>border-image-source:</strong><span class="p3">url(images/border-images.png);</span></p>
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">50px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">27px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">round;</span></p>
+			<p class="p2"><strong>border-image-outset:</strong><span class="p3">50px;</span></p>
+			<br /><br />
+			<p class="p2"><strong>border-image-width:</strong><span class="p3">20px;</span></p>
+			<p class="p2"><strong>border-image-slice:</strong><span class="p3">12px;</span></p>
+			<p class="p2"><strong>border-image-repeat:</strong><span class="p3">round;</span></p>
+		</div>
+
+
+	</div>
+
+
+ </body>
+</html>

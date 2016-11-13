@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3--rotateXY</title>
+
+	<style type="text/css">
+
+		body{font-size:20px;font-family:"微软雅黑";}
+		div,h2,p{font-family:"微软雅黑";font-size:24px; border-radius:10px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+
+
+		#main{width:800px;height:3000px;margin:0px auto;border:2px solid #09f;
+				position:relative;}
+		#div1, #div2, #div3, #div4, #div5, #templet{cursor:pointer;}
+
+		/* 坐标系 */
+		#templet{width:368px; height:402px; margin:0px auto;}
+		/* rotateY */
+		#div1{
+				width:382px; height:201px; margin:40px auto;
+				-webkit-transition:-webkit-transform  1s;
+				-webkit-transform: perspective(400px) rotateY(0deg);
+				-moz-transition:-moz-transform  1s;
+				-moz-transform: perspective(400px) rotateY(0deg);
+			 }
+		#div1:hover{-webkit-transform: perspective(400px) rotateY(-45deg);
+					-moz-transform: perspective(400px) rotateY(-45deg);}
+		/* rotateY */
+		/* rotateX */
+		#div2{
+				width:382px; height:201px; margin:50px auto;
+				-webkit-transition:-webkit-transform  1s;
+				-webkit-transform: perspective(400px) rotateX(0deg);
+				-moz-transition:-moz-transform  1s;
+				-moz-transform: perspective(400px) rotateX(0deg);
+			 }
+		#div2:hover{-webkit-transform: perspective(400px) rotateX(60deg);
+					-moz-transform: perspective(400px) rotateX(60deg);}
+		/* rotateX */
+
+		/* rotate */
+		#div3{
+				width:382px; height:201px; margin:50px auto;
+				-webkit-transition:-webkit-transform  1s;
+				-webkit-transform: perspective(400px) rotate(0deg);
+				-moz-transition:-moz-transform  1s;
+				-moz-transform: perspective(400px) rotate(0deg);
+			 }
+		#div3:hover{-webkit-transform: perspective(400px) rotate(90deg);
+					-moz-transform: perspective(400px) rotate(90deg);}
+		/* rotate */
+
+		/* QQ与YY */
+		#div4{width:382px; height:201px; margin:50px auto; position:relative;}
+
+		.QQ{position:absolute; left:0px; top:0px; z-index:1; opacity:1;
+
+				-webkit-transition:all 0.5s linear;
+				-moz-transition:all 0.5s linear;
+
+				-webkit-transform: rotateY(0deg);
+				-moz-transform: rotateY(0deg);
+				}
+
+		.YY{position:absolute; left:0px; top:0px; z-index:1; opacity:0.5;
+
+				-webkit-transition:all 0.5s linear;
+				-moz-transition:all 0.5s linear;
+
+				-webkit-transform: rotateY(90deg);
+				-moz-transform: rotateY(90deg);
+				}
+
+		#div4:hover .QQ{opacity:0.5;
+				-webkit-transform: perspective(400px) rotateY(-90deg);
+				-moz-transform: perspective(400px) rotateY(-90deg);
+				}
+
+		#div4:hover .YY{opacity:1;
+				-webkit-transform: perspective(400px) rotateY(0deg);
+				-moz-transform: perspective(400px) rotateY(0deg);
+				}
+		/* QQ与YY */
+
+
+		/* QQ与YY 1*/
+		#div5{width:382px; height:201px; margin:50px auto; position:relative;}
+
+		.QQ1{position:absolute; left:0px; top:0px;
+				-webkit-backface-visibility:hidden;
+				-moz-backface-visibility:hidden;
+				-webkit-transition:all 1s linear;
+				-moz-transition:all 1s linear;
+
+				-webkit-transform: rotateY(-1deg);
+				-moz-transform: rotateY(1deg);
+				}
+
+		.YY1{position:absolute; left:0px; top:0px;
+				-webkit-backface-visibility:hidden;
+				-moz-backface-visibility:hidden;
+				
+				-webkit-transition:all 1s linear;
+				-moz-transition:all 1s linear;
+
+				-webkit-transform: rotateY(-180deg);
+				-moz-transform: rotateY(180deg);
+				}
+
+		#div5:hover .QQ1{
+				-webkit-transform: perspective(400px) rotateY(-179deg);
+				-moz-transform: perspective(400px) rotateY(-179deg);
+				}
+
+		#div5:hover .YY1{
+				-webkit-transform: perspective(400px) rotateY(0deg);
+				-moz-transform: perspective(400px) rotateY(0deg);
+				}
+		/* QQ与YY 1*/
+
+
+
+
+	
+		/* 回到顶部 */
+		#toTop{width:60px; height:60px; position:fixed;right:20px; display:none;
+				bottom:20px; border-radius:10px; cursor:pointer;}
+		#toTop img.up{position:absolute; left:0px; top:0px; z-index:1; opacity:1;
+				-webkit-transition:all 0.5s linear;
+				-moz-transition:all 0.5s linear;
+				-webkit-transform: rotateY(0deg);
+				-moz-transform: rotateY(0deg);}
+		#toTop img.txt{position:absolute; left:0px; top:0px; z-index:1; opacity:0.5;
+				-webkit-transition:all 0.5s linear;
+				-moz-transition:all 0.5s linear;
+				-webkit-transform: rotateY(90deg);
+				-moz-transform: rotateY(90deg);}
+		#toTop:hover .up{opacity:0.5;
+				-webkit-transform: perspective(400px) rotateY(-90deg);
+				-moz-transform: perspective(400px) rotateY(-90deg);}
+		#toTop:hover .txt{opacity:1;
+				-webkit-transform: perspective(400px) rotateY(0deg);
+				-moz-transform: perspective(400px) rotateY(0deg);}
+		/* 回到顶部 */
+
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+		<!-- 标题 -->
+		<h2><strong>CSS3</strong>~~3D 转换: rotateX( ) & rotateY( );</h2>
+		<!-- 标题 -->
+		<!-- 说明 开始 -->
+		<p class="p1">&nbsp;&nbsp;<strong><span class="p0">(1)</span> transform:</strong><span class="p0"> rotateX</span>( );</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围绕其 X 轴以给定的度数进行旋转
+		<p class="p1">&nbsp;&nbsp;<strong><span class="p0">(2)</span> transform:</strong><span class="p0"> rotateY</span>( );</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;围绕其 Y 轴以给定的度数进行旋转
+		<p class="p0"><strong>3D转换如下：</strong></p>
+		<!-- 说明 结束 -->
+		<hr class="hr1" />
+		<!-- 坐标系 -->
+		<p><strong>坐标系</strong></p>
+		<div id="templet"><img src="images/xyz.png" /></div><br />
+		<!-- 坐标系 -->
+		<!-- rotateY -->
+		<p class="p1"><strong><span class="p0">(1)</span> div:hover{ transform:<b class="p0">rotateY</b>(<span style="color:#102131;">-45deg</span>); }</strong>
+		</p>
+		<br />
+		<div id="div1">
+			<img src="images/QQ.png" />
+		</div>
+		<!-- rotateY -->
+		<br />
+		<!-- rotateX -->
+		<p class="p1"><strong><span class="p0">(2)</span> div:hover{ transform:<b class="p0">rotateX</b>(<span style="color:#102131;">60deg</span>); }</strong>
+		</p>
+		<br />
+		<div id="div2">
+			<img src="images/QQ.png" />
+		</div>
+		<!-- rotateX -->
+		<br />
+		<!-- rotate -->
+		<p class="p1"><strong><span class="p0">ps</span> div:hover{ transform:<b class="p0">rotate</b>(<span style="color:#102131;">90deg</span>); }</strong>
+		</p>
+		<br />
+		<div id="div3">
+			<img src="images/QQ.png" />
+		</div>
+		<!-- rotate -->
+		<!-- QQ与YY -->
+		<p class="p1"><span class="p0">QQ与YY</span></p>	
+		<div id="div4">
+			<img class="QQ" src="images/QQ.png" />
+			<img class="YY" src="images/YY.png" />
+		</div>
+		<div id="div5">
+			<img class="QQ1" src="images/QQ.png" />
+			<img class="YY1" src="images/YY.png" />
+		</div>
+		<!-- QQ与YY -->
+
+
+
+
+
+		<!-- 回到顶部 -->
+		<div id="toTop">
+			<img class="up" src="images/toTop.png" width="60" height="60"/>
+			<img class="txt" src="images/toTop2.png" width="60" height="60"/>
+		</div>
+		<!-- 回到顶部 -->
+	</div>
+	<!-- main 结束 -->
+
+	
+
+	<script type="text/javascript" src="../link/js/jquery.js"></script>
+	<script type="text/javascript">
+		$("#toTop").click(function(){
+	 		$("html,body").animate({scrollTop: "0px"},"slow");
+	 	});
+		$(window).scroll(function() {
+	 		var tp = $(document).scrollTop();
+	 		if(tp>500){
+	 			$("#toTop").fadeIn();
+	 		}else{
+	 			$("#toTop").fadeOut();
+	 		}
+		});
+	</script>
+	
+ </body>
+</html>

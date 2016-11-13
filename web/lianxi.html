@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>border-image</title>
+  <style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background:url('images/333.png') no-repeat  border-box;
+		padding:30px;
+		border:10px solid red;		
+	}	
+	div.rotate:hover{
+		-webkit-transition:-webkit-transform 1s;
+		-moz-transition:-moz-transform 1s;  /*动画效果，时间为1秒*/
+		transform:rotate(360deg);       
+		-ms-transform:rotate(360deg); 	/* IE 9 */
+		-moz-transform:rotate(360deg); 	/* Firefox */
+		-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+		-o-transform:rotate(360deg); 	/* Opera */
+		
+	}
+	.translate:hover{
+		-webkit-transition:-webkit-transform 1s;
+		-moz-transition:-moz-transform 1s;  /*动画效果，时间为1秒*/
+		transform:translate(50px,50px);/*x轴  与  Y轴*/
+	}
+	.scale:hover{
+		-webkit-transition:-webkit-transform 1s;
+		-moz-transition:-moz-transform 1s;  /*动画效果，时间为1秒*/
+		transform:scale(0.5,0.5);
+	}
+	.skew:hover{
+		-webkit-transition:-webkit-transform 1s;
+		-moz-transition:-moz-transform 1s;  /*动画效果，时间为1秒*/	
+		transform:skew(30deg,0deg)/*div:hover { transform:skew(30deg,0deg); }与x轴相交的两条边逆旋转30°*/
+	}
+	.img{
+		width:300px;
+		height:300px;
+		display:block;
+		position:relative;
+		transform-style:preserve-3d;
+		perspective:500px;
+	}
+	.img img{
+		position:absolute;
+		top:0px;
+		left:0px;
+	}
+	.img img.qq{
+		
+		backface-visibility:hidden;
+		transition: all 0.8s linear;
+	}
+	.img img.yy{
+		transform: rotateY(180deg);
+		backface-visibility:hidden;
+		transition: all 0.8s linear;
+	}
+	.img:hover img.qq{
+	
+		transform: rotateY(180deg);
+	}
+	.img:hover img.yy{
+		
+		transform:rotatey(360deg);
+	}
+  </style>
+ </head>
+ <body>
+	<span style='display:block;height:80px;'></span>
+	<div class='rotate'><span>transform:rotate(度数deg); /*rotate旋转 */</span></div>
+	<hr>
+	<div class='translate'><span>transform:translate(x轴,y轴);/*translate 移动*/</span></div>
+	<hr>
+	<div class='scale'><span>transform:scale(宽倍数,高倍数);/*scale 缩放*/</span></div>
+	<hr>
+	<div class='skew'><span>transform:skew(x轴参数,y轴参数);/*skew 翻转*/</span></div>
+	<span style='display:block;height:80px;'></span>
+	<span class='img'>
+		<img class='qq' src='images/qq.png' width='300' height='300'/>
+		<img class='yy' src='images/yy.png' width='300' height='300' />
+	</span>
+	<span style='display:block;height:890px;'></span>
+ </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>响应式布局</title>
+	<meta name="keywords" content="响应式布局,响应式布局,响应式布局" />
+	<meta name="description" content="响应式布局响应式布局响应式布局响应式布局" />
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0" />
+
+	<style type="text/css">
+		
+		/*初始化样式*/
+	
+		*{margin:0;padding:0;list-style:none;}
+		body{font-size:20px; font-family:"微软雅黑"; color:#fff; font-weight:bold; background:#fff;}
+		a{text-decoration:none;}
+		img{border:none;}
+		div, p{font-size:27px;  text-align:center;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}
+		.p4{color:#fff; font-size:18px; font-weight:normal;}
+
+
+
+		/*公共样式*/
+		.main{margin:0 auto;}
+
+		.header{background:#116b74; height:80px;}
+		.container{margin-top:10px;}
+		.footer{background:#384146; margin-top:10px; height:80px;}
+		
+		.left{background:#429c83;}
+		.center{background:#ec7853; padding:20px;}
+		.right{background:#429c83;}
+		
+		
+
+	
+		@media screen and (max-width:600px){
+		
+			.main{width:479px;}
+			.left{width:100px; min-height:440px; float:left; margin-right:10px;}
+			.center{width:325px; min-height:400px; float:left;}
+			.right{display:none;}
+			
+			p.p4{font-size:14px;}
+		
+		}
+		
+		
+		
+		@media screen and (min-width: 600px){
+		
+			.main{width:640px;}
+			.left{width:100px; min-height:480px; float:left; margin-right:10px;}
+			.center{width:379px; min-height:440px; float:left;}
+			.right{width:100px; min-height:480px; float:right;}
+		
+			p.p4{font-size:16px;}
+		}
+		
+		
+		/*横屏*/
+		/*@media (orientation: landscape){
+
+			.main{width:960px;}
+			.left{width:200px; min-height:480px; float:left; margin-right:10px;}
+			.center{width:500px; min-height:440px; float:left;}
+			.right{width:200px; min-height:480px; float:right;}
+			
+			
+			
+		}*/
+
+		/*竖屏*/
+		/*@media (orientation: portrait){ 
+		
+			.main{width:640px;}
+			.left{width:160px; min-height:440px; float:left; margin-right:10px;}
+			.center{width:430px; min-height:400px; float:left;}
+			.right{display:none;}
+			
+			p.p4{font-size:16px;}
+		
+		}*/
+
+
+	</style>
+    
+    
+    
+    
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div class="main">
+    	<!--头部-->
+        <div class="header">header</div>
+        <!--主体内容-->
+        <div class="container">
+            <div class="left">left</div>
+            <div class="center">
+            	<p>center</p>
+                <p class="p4" style="margin-top:32px; text-align:left;">响应式布局：针对不同的屏幕分辨率采用不同的css样式。屏幕宽的电脑、iPad一行可放置2、3个div；屏幕小的手机，一行就只放1个div。</p>
+                <p class="p4" style="margin-top:15px; text-align:left;">实现的关键：(1)、不修改HTML的结构调整布局(大屏幕采用固定宽度布局；小屏幕采用流式布局)；
+                (2)、判断屏幕大小应用相应的css样式(@media screen and ...)</p>
+                <p class="p4" style="margin-top:15px; text-align:left;">最大宽度：max-width；最小宽度：min-width。</p>
+                <p class="p4" style="margin-top:15px; text-align:left;">设计顺序：先从小屏幕开始设计（手机网站），页面模块化。</p>
+                <p class="p4" style="margin-top:15px; text-align:left;">公共样式：去除默认内外边距；定义字体颜色，背景；清除浮动；....相同的样式提出来，利于代码优化。</p>
+            </div>
+            <div class="right">right</div>
+            <div style="clear:both;"></div>
+        </div>
+        <!--底部-->
+        <div class="footer">footer</div>
+    </div>
+	<!-- main 结束 -->
+
+ </body>
+</html>

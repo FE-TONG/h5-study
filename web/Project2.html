@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>扑克牌效果</title>
+	<meta name="keywords" content="扑克牌效果,扑克牌效果,扑克牌效果" />
+	<meta name="description" content="扑克牌效果扑克牌效果扑克牌效果扑克牌效果扑克牌效果扑克牌效果" />
+
+	<style type="text/css">
+		*{margin:0;padding:0;list-style:none;}
+		body{font-size:20px;font-family:"微软雅黑";}
+		a{text-decoration:none;}
+		img{border:none;}
+		div,h2,p{font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}									/* 自定义字体 */
+		@font-face{font-family:dear5609; src:url(font/Generic_Teenager.ttf);}
+
+
+		#main{width:800px; margin:0px auto; border:2px solid #09f; /* padding-bottom:200px; */
+				position:relative; border-radius:10px; background:#20252B;}
+
+		/* 实例一 */
+		
+		/* 标题栏 */
+		p.title{height:50px; background:#20252B;border-bottom:2px solid #EF4900; color:#fff;
+				text-indent:5px;}
+		p.title a{width:140px; height:50px; display:inline-block; background:#EF4900;/* 标题文字 */
+				text-align:center; line-height:50px; color:#fff; font-size:20px;}
+		/* 暗色背景 */
+		.box{width:700px; height:500px; background:#20252B; margin:0px auto; padding:50px;
+				position:relative;}
+		/* 步骤说明 */
+		.text{width:240px; height:300px; position:absolute; left:0px; top:0px; padding:40px; color:#fff;}
+		.text p{color:#fff; font-size:14px;}
+		
+		/* 虚线(Y轴) */
+		.line{width:1px; height:460px; border-right:1px dashed #fff; 
+				position:absolute; left:120px; top:-45px; z-index:5;}
+		/* 卡片 */
+		.card{ width:240px; height:350px; position:relative; top:0; left:0;
+				margin:40px 370px; cursor:pointer;
+				transition:all 0.8s linear;
+				transform-style:preserve-3d;
+				perspective:800px;
+		}
+		.front{width:240px; height:350px;}
+		.back{width:240px; height:350px; background:#EF4171;transform:rotateY(180deg);}
+		.front, .back{position:absolute;top:0; left:0; border:5px solid #fff;
+				backface-visibility:hidden; transition:all 0.8s linear;}
+		.back p{width:240px; height:350px; text-align:center; line-height:340px;
+				color:#fff; font-size:50px; font-weight:500; font-family:"dear5609";}/* 应用自定义字体 */
+
+		.card:hover .front{transform:rotateY(180deg);}
+		.card:hover .back{transform:rotateY(360deg);}
+		/* 实例一 */
+
+	
+		/* 实例二 */
+		/* 标题栏 */
+		p.title2{height:50px; background:#20252B; border-bottom:2px solid #EF4900; 
+				color:#fff;text-indent:5px;}
+		p.title2 a{width:140px; height:50px; display:inline-block; background:#EF4900;/* 标题文字 */
+				text-align:center; line-height:50px; color:#fff; font-size:20px;}
+		/* box暗色背景 */
+		.box2{width:700px; background:#20252B; margin:0px auto; padding:50px; padding-bottom:200px;}
+
+		/* 卡片2 即 图片框 */
+		ul.card2{width:700px; height:350px;  margin:20px 0px; cursor:pointer; border:5px solid #fff;}
+		
+		ul.card2 li{width:100px; height:350px; float:left; position:relative; left:0; top:0;
+
+				transition:all 0.8s linear;					/* 过渡 */
+				transform-style: preserve-3d;				/* 3D呈现 */
+				transform:perspective(600px);				/* 透视视角 */
+
+				-webkit-transition:all 0.8s linear;			/* 兼容WebKit */
+				-webkit-transform-style: preserve-3d;		/* 兼容WebKit */
+				-webkit-transform:perspective(600px);		/* 兼容WebKit */
+				
+		}
+		ul.card2 li div{width:100px; height:350px; position:absolute;	
+				 backface-visibility:hidden;}				/* 正反俩面的背面隐藏 */
+		ul.card2 li .back2{transform:rotateY(180deg);}		/* 既然是背面，初始就是180度 */
+
+		ul.card2:hover li{transform:rotateY(180deg);}		/* 翻转正反俩面的父级->li */
+
+		/* 卡片2 即 图片框 */
+
+
+		/* 分析说明 */
+		.text2{padding:40px; color:#fff;}
+		.text2 p{color:#fff; font-size:14px;}
+		
+
+
+
+		/* 实例二 */
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 --><br/>
+		<h2><strong>CSS3</strong>~~翻转卡片</h2><br/>
+		<p style="color:#fff; text-indent:20px;">Y轴旋转：rotateY(< angle >) ;</p>
+		<p style="color:#fff; text-indent:20px;">3D呈现：transform-style: flat | preserve-3d ;</p>
+		<p style="color:#fff; text-indent:20px;">隐藏背面：backface-visibility: visible | hidden ;</p>
+		<p style="color:#fff; text-indent:20px;">过渡：transition: all 时间 ;</p>
+		<p style="color:#fff; text-indent:20px;">透视：perspective: < length > ; / transform: perspective( length ) ;</p>
+		<!-- 标题 -->
+		<br />
+		<!-- 第一个实例 -->
+
+		<p class="title"><a href="javascript:;">1.翻转卡片</a></p>
+		<div class="box">
+			<!-- 左侧步骤说明 -->
+			<div class="text">
+				分析：
+				<p>1、</p>
+				<p>将正反两面集中于盒子card中，<br/>重叠在一块</p>
+				<p>2、</p>
+				<p>正面翻转0deg，反面翻转180deg。</p>
+				<p>正反两面都隐藏背面 <br/>backface-visibility: hidden;</p>
+				<p>3、</p>
+				<p>元素3D空间呈现，即：<br/>transform-style: preserve-3d;</p>
+				<p>4、</p>
+				<p>翻转整张卡片，<br/>.card: hover<br/>{transform:rotateY(180deg);}</p>
+				<p>&、</p>
+				<p>过渡<br/>transition: all 0.8s linear;</p>
+				<p>&、</p>
+				<p>透视(查看3D视图)<br/>perspective: 800px;</p>
+				<p>&、</p>
+				<p>自定义字体(背面)</p>
+			</div>
+			<!-- 左侧步骤说明 -->
+			<!-- 卡片开始 -->
+			<div class="card">
+				<div class="line"></div>
+				<!--卡片前面-->
+				<div class="front">
+					<img src="images/card.jpg" width="240" height="350" />
+				</div>
+				<!--卡片背面-->
+				<div class="back">
+					<p>rotateY( )</P>
+				</div>
+			</div>
+			<!-- 卡片结束 -->
+		</div>
+		<!-- 第一个实例 -->
+
+		<!-- 第二个实例 -->
+
+		<p class="title2"><a href="javascript:;">2.翻转图片</a></p>
+		<div class="box2">
+			<!-- 图片框开始 -->
+			<ul class="card2">
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) 0px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) 0px 0px;"></div>
+				</li>
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -100px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -100px 0px;"></div>
+				</li>
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -200px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -200px 0px;"></div>
+				</li>
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -300px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -300px 0px;"></div>
+				</li>	
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -400px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -400px 0px;"></div>
+				</li>
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -500px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -500px 0px;"></div>
+				</li>
+				<li>
+					<div class="front2" style="background:url(images/bac1.jpg) -600px 0px;"></div>
+					<div class="back2" style="background:url(images/bac2.jpg) -600px 0px;"></div>
+				</li>
+			</ul>
+			<!-- 图片框结束 -->
+
+			<div class="text2">
+				步骤：
+				<p>1、</p>
+				<p>构建一个无需列表，ul为整个图片框，ul内水平左浮动7个li，每个li显示图片的不同位置</p>
+				<p>2、</p>
+				<p>每个li内都构建俩div，一个为正面front，另个为反面back</p>
+				<p>正反两个div都隐藏背面，backface-visibility: hidden;</p>
+				<p>3、</p>
+				<p>li中(正反面父级)3D空间呈现，即：transform-style: preserve-3d;</p>
+				<p>4、</p>
+				<p>鼠标hover图片框ul 翻转li，ul: hover li{transform:rotateY(180deg);}</p>
+				<p>&、</p>
+				<p>翻转元素li的过渡 transition: all 0.8s linear;</p>
+				<p>&、</p>
+				<p>透视(查看3D视图)perspective: 600px;</p>
+			</div>
+
+		</div>
+		<!-- 第二个实例结束 -->
+
+		
+
+
+	</div>
+	<!-- main 结束 -->
+
+ </body>
+</html>

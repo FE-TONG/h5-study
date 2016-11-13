@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>iframe</title>
+
+	<style type="text/css">
+
+		body{font-size:20px;font-family:"微软雅黑";}
+		div,h2,p{font-family:"微软雅黑";font-size:24px; border-radius:10px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+
+
+		.main{width:800px; margin:0px auto;border:2px solid #09f; padding-bottom:100px;
+				position:relative;}
+
+		.ifrm1{margin:20px 100px; border:2px dashed black; border-radius:10px;}
+		.ifrm2{margin:20px 100px; border:2px dashed black; border-radius:10px;}
+
+
+
+	</style>
+
+ </head>
+ <body>
+	<div class="main">
+
+		<h2><strong>iframe</strong>~~内联框架</h2>
+
+		<p>使用iframe可以在页面中再嵌入一个文档框架窗口(作用是文档中的文档)：</p>
+
+		<p class="p0"><strong>< iframe src="地址" width="宽" height="高">< iframe></strong></p>
+
+		<p>内联框架和普通的元素一样 可以<span class="p1">自定义宽高、颜色、大小...</span></p>
+		<p class="p1">实例如下：</p>
+
+		<hr class="hr1" />
+		<!-- 百度地图 -->
+		<p class="p0">(1)：<span class="p1">百度地图</span></p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;< iframe src="map.html" width="600" height="400" >< /iframe ></p>
+	
+		<iframe class="ifrm1" src="map.html" width="600" height="400" frameborder="0" scrolling="no">
+		</iframe>					<!-- 框架插入map.html地图，框架边框为0，不设滚动条-->
+		<!-- 百度地图 -->
+
+
+		<p class="p0">(2)：<span class="p1">新浪微博</span></p>
+
+		<iframe width="600" height="400" class="ifrm2"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=7&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=5298690329&verifier=ee1ce77f&dpc=1">
+		</iframe>
+
+
+
+	</div>
+
+	
+
+	
+	
+ </body>
+</html>

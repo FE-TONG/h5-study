@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3~~background</title>
+
+	<style type="text/css">
+		div,h2,p{font-family:"微软雅黑";font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		h2{font-size:32px; color:blue;}
+		.p0{color:red;}
+		.p1{color:#060;}
+		.p2{color:#09d;}
+
+		.main{width:800px; height:3500px; margin:0px auto; border:2px solid #09f;					border-radius:10px;}
+		
+		.bg1{width:300px; height:300px; margin:50px auto; 
+			background:url(images/3.png) no-repeat -65px top, url(images/5.png) no-repeat 70px bottom;
+			background-color:#09d;	
+				
+			}
+		.bg2{width:300px; height:300px; margin:50px auto; background:url(images/7.png) no-repeat;
+			background-color:#09d; background-size:100%;}
+		.bg22{width:400px; height:200px; margin:50px auto; background:url(images/7.png) no-repeat;
+			background-color:#09d; background-size:400px 200px;}
+
+
+		.bg3{width:200px; height:200px; margin:50px auto;  border:50px solid rgba(0,0,0,0.3);
+			padding:50px;
+			background:url(images/8.png) no-repeat;
+			background-color:#09d;
+			}
+		.bg4{width:200px; height:200px; margin:50px auto;  border:50px solid rgba(0,0,0,0.3);
+			padding:50px;
+			background:url(images/8.png) no-repeat;
+			background-color:#09d;
+			background-origin:border-box;}
+		.bg5{width:200px; height:200px; margin:50px auto;  border:50px solid rgba(0,0,0,0.3);
+			padding:50px;
+			background:url(images/8.png) no-repeat;
+			background-color:#09d;
+			background-origin:content-box;}
+
+	</style>
+	</style>
+
+ </head>
+ <body>
+
+	
+	<div class="main">
+
+		<h2>CSS3~~background</h2>
+
+		<p>在CSS3中的属性background，格式如下：</p>
+
+		<p class="p0"><strong>(1)background:</strong><span class="p2"> url(图片一) , url(图片二)；</span>[多重背景]</p>
+
+		<p class="p0"><strong>(2)background-size:</strong><span class="p2"> % || px ;</span></p>
+		<p class="p0"><strong>(3)background-origin:</strong><span class="p2">
+			padding-box || border-box || content-box ;</span>
+		</p>
+				
+		<hr></hr>
+			
+			<br />
+			<p><strong>(1)多重背景</strong> background: url(images/3.png), url(images/5.png);</p>
+			<div class="bg1"></div>
+			
+			<br />
+			<p><strong>(2/1)背景尺寸</strong> background-size: 100%;
+			<div class="bg2"></div>
+			<p><strong>(2/2)背景尺寸</strong> background-size: 400px 200px;
+			<div class="bg22"></div>
+
+			<br />
+			<p><strong>(3/1)背景显示起点</strong> background-origin: padding-box;(默认)
+			<div class="bg3">
+				<span>
+					内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+				</span>
+			</div>
+			<p><strong>(3/2)背景显示起点</strong> background-origin: border-box;
+			<div class="bg4">
+				<span>
+					内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+				</span>
+			</div>
+			<p><strong>(3/3)背景显示起点</strong> background-origin: content-box;
+			<div class="bg5">
+				<span>
+					内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+				</span>
+			</div>
+
+	</div>
+
+
+ </body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3~~text-shadow,word-wrap,font</title>
+
+	<style type="text/css">
+		div,h2,p{font-family:"微软雅黑";font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		h2{font-size:32px; color:blue;}
+		.p0{color:red;}
+		.p1{color:#25AD3F;}
+		.div1{border:2px solid #aaa; width:750px; height:150px; margin:0px 25px 0px; border-radius:5px;}
+		.div2{border:2px solid #aaa; width:750px; height:150px; margin:5px 25px 100px; border-radius:5px;}
+
+
+		.main{width:800px; margin:0px auto; border:2px solid #09f; border-radius:10px;}
+		
+		/*1、CSS3 文本阴影*/
+		.txt1{text-shadow:5px 5px 10px #09c;}
+		.txt2{text-shadow:25px 25px 1px blue;}
+
+		/*2、CSS3 单词自动换行*/
+		.txt4{word-wrap:break-word;}
+
+		/*3、CSS3 自定义字体*/
+		@font-face{font-family:dear5609;src:url(font/Sansation_Bold.eot),url(font/Sansation_Bold.ttf);}
+		
+		.txt6{font-family:"dear5609";}
+	</style>
+	</style>
+
+ </head>
+ <body>
+
+	
+	<div class="main">
+
+		<h2>CSS3~~text-shadow, word-wrap, font</h2>
+
+		<p>在CSS3中的属性text-shadow 可向文本应用阴影，格式如下：</p>
+
+		<p class="p0"><strong>text-shadow:</strong>水平阴影 垂直阴影 模糊距离 阴影颜色;</p>
+
+		<p class="p1"><strong>(1)text-shadow:</strong>5px 5px 10px #09c;</p>
+
+		<div class="div1 txt1">
+			烟雨花巷 那华灯刚初上
+			谁站在牡丹亭中央
+			琴声悠扬 透过了石板墙
+			为谁弹奏一曲忧伤
+		</div>
+		<p class="p1"><strong>(2)text-shadow:</strong>25px 25px 1px blue;</p>
+		<div class="div2 txt2">
+			烟雨花巷 那华灯刚初上
+			谁站在牡丹亭中央
+			琴声悠扬 透过了石板墙
+			为谁弹奏一曲忧伤
+		</div>
+
+		
+		<hr /><!--****************************************************************************************-->
+
+
+		<h2>2、CSS3 单词自动换行</h2>
+
+		<p>在CSS3中的属性word-wrap 允许英文单词文本强制进行换行，格式如下：</p>
+
+		<p class="p0"><strong>word-wrap:</strong>break-word(值); 词内换行</p>
+
+		<p class="p1"><strong>（1）对照组word-wrap:</strong> ;</p>
+
+		<div class="div1 txt3">
+			Passion is sweet
+			Love makes weak
+			You said you cherised freedom soooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+			You refused to let it go
+
+			Follow your faith 
+
+		</div>
+		<p class="p1"><strong>（2）实验组word-wrap:</strong>break-word;</p>
+		<div class="div2 txt4">
+			Passion is sweet
+			Love makes weak
+			You said you cherised freedom soooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+			You refused to let it go
+
+			Follow your faith 
+		</div>
+
+
+		<hr /><!--****************************************************************************************-->
+
+
+		<h2>3、CSS3 自定义字体</h2>
+
+		<p>在CSS3中的属性@font-face{font-family: name; src:url(1), url(2);} 可以自定义你要给网页使用的字体，格式如下：</p>
+
+		<p class="p0"><strong>@font-face</strong>{font-family: name; src:url(路径1), url(路径2);} -------自定义字体;</p>
+		<p class="p0"><strong>@font-face</strong>{font-family: dear5609; src:url(font/Sansation_Bold.eot), url(font/Sansation_Bold.ttf);}</p>
+
+		<p class="p1"><strong>(1)未调用</strong> ;</p>
+
+		<div class="div1 txt5">
+			Well I wonder could it be 
+			When I was dreaming about you baby 
+			You were dreaming of me 
+			Call me crazy 
+			Call me blind 
+			To still be suffering is stupid after all of this time 
+
+		</div>
+		<p class="p1"><strong>(2)调用：.txt6{font-family:"dear5609";}</strong></p>
+		<div class="div2 txt6">
+			Well I wonder could it be 
+			When I was dreaming about you baby 
+			You were dreaming of me 
+			Call me crazy 
+			Call me blind 
+			To still be suffering is stupid after all of this time 
+		</div>
+
+
+		<!--****************************************************************************************-->
+
+
+	</div>
+
+
+ </body>
+</html>

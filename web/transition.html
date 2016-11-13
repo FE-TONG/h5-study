@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3--transition</title>
+
+	<style type="text/css">
+
+		body{font-size:20px;font-family:"微软雅黑";}
+		div,h2,p{font-family:"微软雅黑";font-size:24px; border-radius:10px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}
+
+
+		#main{width:800px;height:2500px;margin:0px auto;border:2px solid #09f;
+				position:relative;}
+
+		/* 游戏背景 */
+		#box{width:648px; height:488px; margin:50px auto; background:url(images/floor.jpg); 
+				position:relative; overflow:hidden;}/*父级 相对定位*/
+
+		/* 子弹动画 */
+		div.bullet{width:20px; height:20px; border-radius:10px; background:blue;
+				 position:absolute; right:0px; top:36px;
+				 -moz-animation:zidan 0.1s;
+				 -webkit-animation:zidan 0.1s;
+				 -moz-animation-iteration-count:infinite;
+				 -webkit-animation-iteration-count:infinite;}/*子弹无限循环*/
+		@-moz-keyframes zidan{/*FF 定义动画*/
+				from {background:blue; left:100px;}
+				to {background:red; left:350px;}
+		}
+		@-webkit-keyframes zidan{/*Chrome 定义动画*/
+				from {background:blue; left:100px;}
+				to {background:red; left:350px;}
+		}/* 子弹动画 */
+		
+		/* 坦克 */
+		div.tank{width:100px; height:100px; background:url(images/tank.png);
+				position:absolute; left:265px; top:160px; z-index:5; border:1px solid white;
+				-webkit-transition:all 9999s;
+				-moz-transition:all 9999s;
+				transition:all 9999s;}
+		/* 坦克 */
+
+		/* 方向键 */
+		img.ctrl{position:absolute; width:60px; height:60px; z-index:10; 
+				border-radius:30px; cursor:pointer;}
+		img.up {left:540px; top:354px; background:url(images/up.png);}
+		img.down {left:540px; top:430px; background:url(images/down.png);}
+		img.left {left:502px; top:392px; background:url(images/left.png);}
+		img.right {left:578px; top:392px; background:url(images/right.png);}
+		/* 方向键 */
+
+		/* 控制效果 */
+		img.ctrl:active ~ div.tank {
+				-webkit-transition: 1.5s linear, transform 0.5s;
+				-moz-transition: 1.5s linear, transform 0.5s;
+				transition: 1.5s linear, transform 0.5s;}
+		img.up:active ~ div.tank {top:0; transform:rotate(-90deg);}
+		img.down:active ~ div.tank {top:386px; transform:rotate(90deg);}
+		img.left:active ~ div.tank {left:0; transform:rotate(-180deg);}
+		img.right:active ~ div.tank {left:546px; transform:rotate(0deg);}
+		/* 控制效果 */
+
+		/* 鼠标按下的效果 */
+		img.up:active{background:url(images/up1.png);}
+		img.down:active{background:url(images/down1.png);}
+		img.left:active{background:url(images/left1.png);}
+		img.right:active{background:url(images/right1.png);}
+		/* 鼠标按下的效果 */
+
+		/* 方向键图示 */
+		.btns{width:648px; height:300px; margin:20px auto; border:1px solid black;
+				background:url(images/btns.png) no-repeat center center; position:relative;}
+		.btns p.txt{color:black; position:absolute;}
+		.btns p.T{left:180px; top:0px;}
+		.btns p.R{left:500px; top:100px;}
+		.btns p.B{left:180px; top:230px;}
+		.btns p.L{left:0px; top:100px;}
+		/* 方向键图示 */
+		
+
+
+
+		
+		/* 右上角小坦克 */
+		.wheel{width:80px; height:60px; background:green;
+				position:absolute; left:50px; top:15px;
+				margin:0px 500px; cursor:pointer;
+				box-shadow: inset 0 0 0 5px #111;
+				-webkit-transition:all 1s;
+				-moz-transition:all 1s;
+				}
+		.wheel:hover{left:-300px;}
+
+		.roof{width:40px; height:20px; background:#fff; position:absolute;
+				left:20px; top:20px; border-radius:2px; box-shadow:3px 3px 10px #000;}
+		.gun{width:40px; height:5px; background:#fff; position:absolute;					left:-40px; top:-15px; border-radius:5px;}
+		.roof span{ position:absolute; font-size:14px; color:red; text-shadow:3px 3px 10px #000;}
+
+		.wheel svg{position:absolute; left:0px; top:0px;}
+		.wheel svg line{stroke-width:30; stroke:#ecf0f1; fill:none;
+				-webkit-transition: all .8s;
+				-moz-transition: all .8s;}
+
+		.wheel svg line.wheelR, .wheel svg line.wheelL{stroke-dasharray:6 6;}
+
+		.wheel:hover svg line.wheelR {
+			-webkit-transform: translateX(-1200px);
+			-moz-transform: translateX(-1200px);
+		}
+		.wheel:hover svg line.wheelL {
+			-webkit-transform: translateX(-1200px);
+			-moz-transform: translateX(-1200px);
+		}
+		/* 右上角小坦克 */
+
+
+
+
+
+
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 -->
+		<h2><strong>CSS3</strong>~~过渡 transition</h2>
+		<!-- 标题 -->
+
+		<!-- 知识点说明 开始 -->
+		<p class="p1"><strong><span class="p0">1、</span> transition</strong>的概念</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;过渡就是给元素样式的变换添加一个渐变过程。
+		<p class="p1"><strong><span class="p0">2、</span> transition</strong>的组成  (必须规定两项内容，多个属性由逗号隔开)</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a、要改变的css属性 &nbsp;&nbsp; b、效果时长。
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>即(1)</span> transition: 属性 时间 ;</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition: 属性 时间 , 属性 时间 , 属性 时间 , 属性 时间 , ...</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all 时间 ;</p>
+		<!-- 知识点说明 结束 -->
+		<hr class="hr1" />
+		<p class="p1"><strong><span class="p0">3、</span>transition</strong>的应用</p>
+		<p class="p3">向元素的left、top和 rotate( ) 添加过渡效果</p>
+		<!-- 坦克与方向键 -->
+		(1)鼠标按住方向键操控坦克：
+		<div id="box">
+			<img class="ctrl up" />
+			<img class="ctrl down" />
+			<img class="ctrl left" />
+			<img class="ctrl right" />
+			<div class="tank" id="tanke"><div class="bullet" id="zidan"></div></div>
+			<!-- 右上角小坦克 -->
+			<div class="wheel">
+				<div class="roof">
+					<span>hover</span>
+					<p class="gun"></p>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+					<line class="wheelR" x1="0" y1="0" x2="3200" y2="0"></line>
+					<line class="wheelL" x1="0" y1="60" x2="3200" y2="60"></line>
+				</svg>
+			</div>
+			<!-- 右上角小坦克 -->
+
+		</div>
+		<!-- 坦克与方向键 -->
+
+		<!-- 事例说明 开始-->
+		(2)方向键对坦克的操作如下---> <span class="p0">transition:移动 时长1.5s , 旋转 时长0.5s ;</span>
+		<div class="btns">
+			<p class="txt T">top:0px; rotate(<span class="p3">-90deg</span>);</p>
+			<p class="txt R">left:546px;<br />rotate(<span class="p3">0deg</span>);</p>
+			<p class="txt B">top:386px; rotate(<span class="p3">90deg</span>);</p>
+			<p class="txt L">left:0px;<br />rotate(<span class="p3">-180deg</span>);</p>
+		</div>
+		(3)代码如下：<br />
+		<span style="font-size:20px;">( ctrl是四个方向键的共同样式，tank为坦克，这里还用到css伪类：active</span><br /><span style="font-size:20px;">active:鼠标点击时所发生的样式，类似于hover )</span><br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">ctrl</span>:<span class="p1">active</span> ~ div.tank {<span class="p0">transition:</span> 1.5s linear, transform 0.5s;}<br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">up</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">top:0; transform:rotate(-90deg);</a>}<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">down</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">top:386px; transform:rotate(90deg);</a>}<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">left</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">left:0; transform:rotate(-180deg);</a>}<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">right</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">left:546px; transform:rotate(0deg);</a>}<br /><br />
+		<span style="font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之所以，坦克经过transition后 松开鼠标它没有回到原来的位置，而是控制它走到哪里它就停在哪里，这是因为在坦克的div中给定了一个transition即div.tank{ transition:all 9999s; }，时间为9999s，时间近似无限大，速度就慢至为0(静止不动)；只有active作用于它才会移动。</span><br /><br />
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;给div.tank添加了transition经过过渡之后，坦克的旋转调头和移动都会有一个运动过程，而不是突变！渐变的过程体验会更好<br /><br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:16px;">这个事例也是儿时小游戏的一个启发吧 也不知道做的好不好 希望能对这个“过渡”理解有帮助 不足之处 还望指正</span>
+		<!-- 事例说明 结束-->
+
+
+	</div>
+	<!-- main 结束 -->
+
+	
+
+
+
+
+	
+ </body>
+</html>

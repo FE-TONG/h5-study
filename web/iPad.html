@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>响应式</title>
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0" />
+
+<style>
+	
+body{background:#01163f; font-size:21px; color:#fff; font-family:"微软雅黑"; height:1000px; overflow:hidden;}
+
+.main{width: 704px; height: 528px; margin:40px auto; position: relative;
+		transform:scale(0.8); cursor:pointer;}
+.title{position:absolute; left:0px; top:-100px;}
+.iPad{width: 700px; height: 524px; position: absolute; border: 2px solid #fff; 
+		border-radius: 10px; overflow:hidden;}
+.screen{width: 649px; height: 472px; position: absolute; margin: 24px; 
+		background:rgba(255,255,255,.2); overflow:hidden;}
+.web{width: 649px; height: 472px; position: absolute; left:0; top:0;}/*响应式网页(框架)*/
+
+
+/* iPad animation */
+.iPad{animation: iPad 5s ease-in-out 1s forwards;}
+.web{animation: web 2s ease-in-out 1s forwards;}
+
+/*.main:hover .iPad{animation-play-state:paused;}
+.main:hover .web{animation-play-state:paused;}
+.main:hover .text{animation-play-state:paused;}*/
+
+
+/*iPad翻转动画*/
+@keyframes iPad{
+	0%{transform:rotate(0) scale(1);}
+	20%{transform:rotate(0) scale(1);}
+	30%{transform:rotate(90deg) translateX(-30px) scale(0.7);}
+	45%{transform:rotate(90deg) translateY(240px) translateX(-30px) scale(0.7);}
+	100%{transform:rotate(90deg) translateY(240px) translateX(-30px) scale(0.7);}
+}
+
+/*响应式网页(框架)动画*/
+@keyframes web{
+	0%{transform:rotate(0); width:649px; height:472px; left:0; top:0;}
+	50%{transform:rotate(0); width:649px; height:472px; left:0; top:0;}
+	100%{transform:rotate(-90deg); width:472px; height:649px; left:90px; top:-90px;}
+}
+
+/*代码优化 动画*/
+.text{width:500px; min-height:450px; position:absolute; right:-500px; top:-50px;
+		animation:text 2s ease-in-out 2.4s forwards; opacity:0;}
+.text .pp{font-size:16px; text-indent:30px; }
+@keyframes text{
+	
+	0%{right:-500px; opacity:0;}
+	50%{right:-500px; opacity:0;}
+	100%{right:-200px; opacity:1;}
+}
+
+
+
+</style>
+    
+</head>
+
+<body>
+
+    <div class="main animate">
+    	<p class="title">横竖屏响应式</p>
+        <div class="iPad">
+            <div class="screen">
+            	<iframe class="web"  src="Response2.html" frameborder="0"></iframe>            
+            </div>
+        </div>
+        <div class="text">
+            <p>代码优化：</p>
+            <p>1.响应式布局因为要准备几套css样式，因此在布局的时候会有大量代码冗余，如果不进行代码优化，网站到后期，代码越来越多，网站就很臃肿，影响浏览器在不同分辨率屏幕下对不同css样式的渲染速度，也就影响网站的打开速度。</p>
+            <p>2.在这几套css样式中查找相同的样式属性，然后提出@Media screen and ... { } 之外作为公共样式。</p>
+            <p>3.这些重复的样式属性比如：
+            <p class="pp">模块background</p>
+            <p class="pp">main居中显示</p>
+            <p class="pp">header、footer的高度</p>
+            <p class="pp">header、container、footer的margin-top</p>
+            <p class="pp">left、center、right的高度</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

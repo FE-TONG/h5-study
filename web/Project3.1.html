@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>无缝滚动</title>
+	<meta name="keywords" content="无缝滚动,无缝滚动,无缝滚动" />
+	<meta name="description" content="无缝滚动无缝滚动无缝滚动无缝滚动无缝滚动无缝滚动" />
+
+	<style type="text/css">
+	
+		*{margin:0;padding:0;list-style:none;}
+		body{font-size:20px;font-family:"微软雅黑";}
+		a{text-decoration:none;}
+		img{border:none;}
+		div,h2,p{font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}									/* 自定义字体 */
+		@font-face{font-family:dear5609; src:url(font/Generic_Teenager.ttf);}
+
+
+
+
+		/*居中main框架*/
+		#main{width:800px; margin:0px auto; border:2px solid #09f; padding-bottom:200px;
+			position:relative; border-radius:10px; background:#112233/*20252B*/; 
+			perspective:1800px; -webkit-perspective:1800px;}
+
+	
+		/* 无缝滚动实例 */
+		/* 标题栏 */
+		p.title{height:50px; border-bottom:2px solid #EF4900; 
+			color:#fff;text-indent:5px;}
+		p.title a{width:140px; height:50px; display:inline-block; /* 标题文字 */
+			background:#EF4900; font-size:20px;
+			text-align:center; line-height:50px; color:#fff; }
+
+
+		.box{width:600px; height:150px; background:#112233; 
+			margin:100px auto; position:relative; overflow:hidden; 
+			border:2px solid #112233; box-shadow:0 0 0 10px #fff; cursor:pointer;}
+		
+		ul{width:2000px; height:150px; animation:slide 5s linear infinite;}
+		
+		@keyframes slide{
+			from{transform:translateX(0px);}
+			to{transform:translateX(-808px);}
+			
+		}
+		
+		.box:hover ul{animation-play-state:paused;}
+		
+		li{list-style:none; width:200px; float:left;
+			border-left:1px solid #112233; border-right:1px solid #112233;}
+		ul li:hover{animation:photo 1s;}
+		
+		.photo{width:200px; height:150px; background:#09d;}
+		
+		@keyframes photo {
+			0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+			40% {transform: translateY(-30px);}
+			60% {transform: translateY(-15px);}
+		}
+	
+		/* 最后步骤分析说明 */
+		.text{padding-left:60px; padding-bottom:60px; color:#fff;}
+		.text p{color:#fff; font-size:18px;}
+		
+
+		/* 无缝滚动实例 结束 */
+
+		
+		
+		
+		/*垂直滚动 开始*/
+		.timer{width:245px; height:205px; margin:120px auto; cursor:pointer;}
+		.ten{width:120px; height:200px; float:left;}
+		.one{width:120px; height:200px; float:left;}
+	
+		.num0, .num1, .num2, .num3{position:relative; left:20px; top:20px;
+			width:80px; height:80px; overflow:hidden;
+			border:2px solid #ccc;}
+		.num0, .num2{border-bottom:none;}	
+		
+		.border0, .border1{top:0px; animation:scroll1 60s infinite cubic-bezier(1,0,0.5,0);}
+		.border0 div, .border1 div{height:80px; text-align:center; 
+			line-height:80px; color:#EF4900; font-size:50px; font-weight:bold;}
+		.border1 div{color:#EBD82F;}
+
+		.border2, .border3{top:0px; animation:scroll2 10s infinite cubic-bezier(1,0,0.5,0);}
+		.border2 div, .border3 div{height:80px; text-align:center; 
+			line-height:80px; color:#EF4900; font-size:50px; font-weight:bold;}
+		.border3 div{color:#09d;}
+
+		/*十位数动画*/	
+		@keyframes scroll1{
+			0%{transform:translateY(0px);}
+			16.67%{transform:translateY(-80px);}
+			33.34%{transform:translateY(-160px);}
+			50.01%{transform:translateY(-240px);}
+			66.68%{transform:translateY(-320px);}
+			83.35%{transform:translateY(-400px);}
+			100%{transform:translateY(-480px);}	
+		}	
+		/*个位数动画*/	
+		@keyframes scroll2{
+			0%{transform:translateY(0px);}
+			10%{transform:translateY(-80px);}
+			20%{transform:translateY(-160px);}
+			30%{transform:translateY(-240px);}
+			40%{transform:translateY(-320px);}
+			50%{transform:translateY(-400px);}
+			60%{transform:translateY(-480px);}
+			70%{transform:translateY(-560px);}
+			80%{transform:translateY(-640px);}
+			90%{transform:translateY(-720px);}
+			100%{transform:translateY(-800px);}	
+		}
+	
+		.ppp{margin-top:20px; text-indent:20px;}
+		.pppp{margin-top:20px; text-indent:60px;}
+		/*垂直滚动 结束*/
+
+
+
+
+	</style>
+    
+    
+    
+    
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 --><br/>
+		<h2><strong>CSS3</strong>~~animation</h2><br/>
+		<p style="color:#fff; text-indent:20px;">动画</p>
+		<p style="color:#fff; text-indent:20px;">animation: 动画名称  持续时间；</p>
+        <p style="color:#fff; text-indent:20px; margin-top:30px;">动画规则</p>
+        <p style="color:#fff; text-indent:20px; margin-top:15px;">@keyframes slide { /*动画规则  动画名称*/</p>
+        <p style="color:#fff; text-indent:60px; margin-top:15px;">from { 属性 : 值 ; } /* 从{ .... } */</p>
+        <p style="color:#fff; text-indent:60px;">to { 属性 : 值 ; } /* 到{ .... } */</p>
+        <p style="color:#fff; text-indent:20px;">}</p>
+		<p style="color:#fff; text-indent:20px; margin-top:30px;">播放次数</p>
+		<p style="color:#fff; text-indent:20px;">animation-iteration-count：n (次数) | infinite (无限循环) ;</p>
+        <p style="color:#fff; text-indent:20px; margin-top:30px;">暂停播放</p>
+        <p style="color:#fff; text-indent:20px;">animation-play-state：paused ; </p>
+        <p style="color:#fff; text-indent:20px; margin-top:30px;">合并语法</p>
+        <p style="color:#fff; text-indent:20px;">animation: name duration timing-function delay iteration-count direction ; </p>
+		
+		<!-- 标题 -->
+		<br />
+
+	<!-- 无缝滚动实例 开始 -->
+		
+        <!--实例标题-->
+		<p class="title"><a href="javascript:;">无缝滚动</a></p>
+        
+    	<!-- 图片框 开始 -->
+		<div class="box">
+            <ul>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic1.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic2.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic3.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic4.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic1.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic2.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic3.jpg" width="200" height="150" />
+                    </div>
+                </li>
+                <li>
+                    <div class="photo">
+                        <img src="images/pic4.jpg" width="200" height="150" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 图片框 结束 -->
+        
+	<!-- 无缝滚动实例 结束 -->
+    
+    	<!--步骤说明 开始-->
+		<div class="text">
+            步骤：
+            <p style="margin-top:20px;">
+            	1、构建一个盒子box为图片框，宽度600px，overflow: hidden ; 
+            </p>
+            <p style="margin-top:20px;">
+            	2、在box中构建一个ul，宽度足够长，并定义动画属性，无限循环</p>
+            <p style="margin-top:20px;">
+            	3、ul中构建8个li水平左浮动，每4个为一组，两组图片一样，box可视li为3个
+            </p>
+            <p>这样当第1个li往左边滚出，第5个li刚从右边滚入，这两个li放置的图片相同，实现无缝滚动</p>
+            <p style="margin-top:20px;">4、@keyframes slide</p>
+            <p>{</p>
+            <p style="text-indent:20px;">from{ transform : translateX( 0px ) ; }</p>
+            <p style="text-indent:20px;">to{ transform : translateX( -808px ) ; }</p>
+			<p>}</p>
+            <p style="margin-top:20px;">
+            	每个li 202px宽(包括border)，往左滚动4个li，所以translateX( -808px ) ;
+            </p>
+			<p style="margin-top:20px;">
+            	5、鼠标移入暂停动画：.box:hover ul { animation-play-state : paused ; }
+            </p>
+            <p style="margin-top:20px;">
+            	6、暂停后被选中的图片动画：ul li : hover{ animation : photo 1s ; }
+            </p>
+            <p style="margin-top:20px;">@keyframes photo</p>
+            <p>{</p>
+            <p style="text-indent:20px;">0%, 20%, 50%, 80%, 100% { transform: translateY(0); }</p>
+            <p style="text-indent:20px;">40% { transform: translateY(-30px); }</p>
+			<p style="text-indent:20px;">60% { transform: translateY(-15px); }</p>
+            <p>}</p>
+        </div>
+		<!--步骤说明 结束-->
+		<p class="title"><a href="javascript:;">垂直滚动</a></p>
+        <div class="timer">
+        	<!--十位数-->
+            <div class="ten">
+                <div class="num0">
+                    <div class="border0">
+                        <div>0</div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="num1">
+                    <div class="border1">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>0</div>
+                    </div>
+                </div>
+            </div>
+            <!--十位数-->
+            <!--个位数-->
+            <div class="one">
+            	<div class="num2">
+                    <div class="border2">
+                        <div>0</div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                    </div>
+                </div>
+                <div class="num3">
+                    <div class="border3">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>0</div>
+                    </div>
+                </div>
+            </div>
+            <!--个位数-->
+		</div>
+        
+        <div class="text">
+            步骤：
+            <p style="margin-top:20px;"> 		1、个位数构建两个上下div，上下两个div中再分别放置10个div，div(上)中的10个div数字从0-9，div(下)数字从1-9-0，然后两组div自下而上重复滚动，周期为10s; 
+            </p>
+            <p style="margin-top:20px;">            
+            	2、十位数同理，不过周期为60s;
+            </p>
+            <p class="ppp">/*十位数动画*/</p>
+			<p class="ppp">@keyframes scroll1{</p>
+			<p class="pppp">0%{transform:translateY(0px);}</p>
+			<p class="pppp">16.67%{transform:translateY(-80px);}</p>
+			<p class="pppp">33.34%{transform:translateY(-160px);}</p>
+			<p class="pppp">50.01%{transform:translateY(-240px);}</p>
+			<p class="pppp">66.68%{transform:translateY(-320px);}</p>
+			<p class="pppp">83.35%{transform:translateY(-400px);}</p>
+			<p class="pppp">100%{transform:translateY(-480px);}	</p>
+			<p class="ppp">}	</p>
+			<p class="ppp">/*个位数动画*/	</p>
+			<p class="ppp">@keyframes scroll2{</p>
+			<p class="pppp">0%{transform:translateY(0px);}</p>
+			<p class="pppp">10%{transform:translateY(-80px);}</p>
+			<p class="pppp">20%{transform:translateY(-160px);}</p>
+			<p class="pppp">30%{transform:translateY(-240px);}</p>
+			<p class="pppp">40%{transform:translateY(-320px);}</p>
+			<p class="pppp">50%{transform:translateY(-400px);}</p>
+			<p class="pppp">60%{transform:translateY(-480px);}</p>
+			<p class="pppp">70%{transform:translateY(-560px);}</p>
+			<p class="pppp">80%{transform:translateY(-640px);}</p>
+			<p class="pppp">90%{transform:translateY(-720px);}</p>
+			<p class="pppp">100%{transform:translateY(-800px);}	</p>
+			<p class="ppp">}</p>
+        </div>
+        
+        
+        
+	</div>
+	<!-- main 结束 -->
+
+ </body>
+</html>

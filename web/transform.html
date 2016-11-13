@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3--transform</title>
+
+	<style type="text/css">
+
+		body{font-size:20px;font-family:"微软雅黑";}
+		div,h2,p{font-family:"微软雅黑";font-size:24px; border-radius:10px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+
+
+		.main{width:800px;height:3000px;margin:0px auto;border:2px solid #09f;
+				position:relative;}
+
+		/*
+		transform: （元素转换成坐标轴化）
+
+					translate()		移动
+					rotate()		旋转
+					scale()			缩放
+					skew()			翻转
+					matrix()
+		-ms-transform:rotate(360deg); 		IE 9 
+		-moz-transform:rotate(360deg);		Firefox 
+		-webkit-transform:rotate(360deg);	Safari 和 Chrome 
+		-o-transform:rotate(360deg); 		Opera 
+		
+		*/
+
+		/*1、移动*/
+	
+		.div1{width:200px; height:200px; background:#09d; border:1px solid black;
+
+				animation:myfirst2 10s;							/* 定义变色动画 */
+				transition:-webkit-transform 1s;
+				animation-iteration-count:infinite;
+
+				-webkit-animation:myfirst2 20s;
+				-webkit-transition:-webkit-transform 1s;
+				-webkit-animation-iteration-count:infinite;
+				
+				-moz-animation:myfirst2 20s;
+				-moz-transition:-moz-transform 1s;
+				-moz-animation-iteration-count:infinite;
+				
+			}
+			
+		.div1:hover{										/* 鼠标hover 旋转 */
+				transform:rotate(360deg);
+				-webkit-transform:rotate(360deg);
+				-moz-transform:rotate(360deg);	
+			}
+
+			@-webkit-keyframes myfirst2							/* 变色动画过程 */
+			{
+				0%   {background:#09c; left:0px; top:0px;}
+				25%  {background:green; left:200px; top:0px;}
+				50%  {background:yellow; left:200px; top:150px;}
+				75%  {background:red; left:0px; top:150px;}
+				100% {background:blue; left:0px; top:0px;}
+			}
+			@-moz-keyframes myfirst2
+			{
+				0%   {background:#09c; left:0px; top:0px;}
+				25%  {background:green; left:200px; top:0px;}
+				50%  {background:yellow; left:200px; top:150px;}
+				75%  {background:red; left:0px; top:150px;}
+				100% {background:blue; left:0px; top:0px;}
+			}
+
+
+
+
+		.div2{width:200px; height:200px; background:#09d; border:1px solid black;
+				transform:translate(-40px,40px);
+				-webkit-transform:translate(-40px,40px);
+				-moz-transform:translate(-40px,40px);
+			}
+
+
+		/*3、旋转*/
+
+		.div3{width:200px; height:200px; background:#09d; border:1px solid black;
+				transform:rotate(30deg);
+				-webkit-transform:rotate(30deg);
+				-moz-transform:rotate(30deg);
+			}
+		/*4、倍放*/
+		.div4{width:200px; height:200px; background:#09d; border:1px solid black;}
+		.div5{width:200px; height:200px; background:#09d; border:1px solid black;
+				transform:scale(0.5,0.5);
+				-webkit-transform:scale(0.5,0.5);
+				-moz-transform:scale(0.5,0.5);
+			}
+
+		/*6、翻转*/
+		.div6{width:200px; height:200px; background:#09d; border:1px solid black;
+				transform:skew(30deg,20deg);
+				-webkit-transform:skew(30deg,20deg);
+				-moz-transform:skew(30deg,20deg);
+
+		}
+
+
+		/*hover*/
+		.div1, .hover1, .hover2, .hover3, .hover4, .hover5{cursor:pointer;}
+
+		.hover1{width:200px; height:200px; background:#09d; border:1px solid black; 
+				position:absolute; left:500px; top:840px;}
+		.hover1:hover{
+				-webkit-transition:-webkit-transform 1s;
+				-moz-transition:-moz-transform 1s;
+				transform:translate(-40px,40px);
+				-webkit-transform:translate(-40px,40px);
+				-moz-transform:translate(-40px,40px);}
+		
+		.hover2{width:200px; height:200px; background:#09d; border:1px solid black; 
+				position:absolute; left:500px; top:1290px;}
+		.hover2:hover{
+				-webkit-transition:-webkit-transform 1s;
+				-moz-transition:-moz-transform 1s;
+				transform:rotate(30deg);
+				-webkit-transform:rotate(30deg);
+				-moz-transform:rotate(30deg);}
+
+		.hover3{width:200px; height:200px; background:#09d; border:1px solid black; 
+				position:absolute; left:500px; top:1735px;}
+		.hover3:hover{
+				-webkit-transition:-webkit-transform 1s;
+				-moz-transition:-moz-transform 1s;
+				transform:scale(0.5,0.5);
+				-webkit-transform:scale(0.5,0.5);
+				-moz-transform:scale(0.5,0.5);}		
+
+		.hover4{width:200px; height:200px; background:#09d; border:1px solid black; 
+				position:absolute; left:500px; top:2345px;}
+
+		.hover4:hover{
+				-webkit-transition:-webkit-transform 1s;
+				-moz-transition:-moz-transform 1s;
+				transform:skew(30deg,0deg);
+				-webkit-transform:skew(30deg,0deg);
+				-moz-transform:skew(30deg,0deg);}	
+
+		.hover5{width:200px; height:200px; background:#09d; border:1px solid black; 
+				position:absolute; left:500px; top:2673px;
+				transform:skew(30deg,0deg);
+				-webkit-transform:skew(30deg,0deg);
+				-moz-transform:skew(30deg,0deg);}
+
+		.hover5:hover{
+				-webkit-transition:-webkit-transform 1s;
+				-moz-transition:-moz-transform 1s;
+				transform:skew(30deg,20deg);
+				-webkit-transform:skew(30deg,20deg);
+				-moz-transform:skew(30deg,20deg);}
+
+
+	</style>
+
+ </head>
+ <body>
+	<div class="main">
+
+		<h2><strong>CSS3</strong>~~transform</h2>
+
+		<p>在CSS3中的属性transform 元素转换成坐标轴化：</p>
+
+		<p class="p0"><strong>4种transform:</strong>移动; 旋转; 放大; 翻转;</p>
+		<p class="p1">&nbsp;&nbsp;<strong>(1)transform:</strong><span class="p0">translate</span>(x轴,y轴);</p>
+		<p class="p1">&nbsp;&nbsp;<strong>(2)transform:</strong><span class="p0">rotate</span>(度数deg);</p>
+		<p class="p1">&nbsp;&nbsp;<strong>(3)transform:</strong><span class="p0">scale</span>(宽倍数,高倍数);</p>
+		<p class="p1">&nbsp;&nbsp;<strong>(4)transform:</strong><span class="p0">skew</span>(x轴参数,y轴参数);</p>
+		<p class="p0"><strong>这4种变换依次如下：</strong></p>
+		<hr class="hr1" />
+		<!--原DIV-->
+		<div class="div1">DIV原来的位置<br /><br /><br /><br /><br /><span style="font-size:15px;">hover</span></div>
+		<!--原DIV-->
+		<p class="p1"><strong><span class="p0">(1)、translate()</span>沿x轴负向移动40px，y轴正向移动40px;</strong><br /></p>
+		<!--位移-->
+		<div class="div2">(1)transform:translate(-40px,40px);<br /></div>
+		<!--位移-->
+		<br /><br /><br /><br />
+		<!--旋转-->
+		<p class="p1"><strong><span class="p0">(2)、rotate()</span>顺时针旋转30度</strong><br /></p><br /><br />
+		<div class="div3">(2)transform:rotate(30deg);</div>
+		<!--旋转-->
+		<br /><br /><br />
+		<p class="p1"><strong><span class="p0">(3)、scale()</span>宽高缩放0.5倍</strong><br /></p><br /><br />
+		<div class="div4">DIV</div>
+		<br />
+		<div class="div5">DIV<br />(3)transform:scale(0.5,0.5);</div>
+		
+		<!-- 翻转 -->
+		<br /><br />
+		<p class="p1"><strong><span class="p0">(4)、skew()</span> 围绕 x 轴把div翻转 30 度，围绕 y 轴翻转 20 度</strong><br /></p><br /><br />
+		<div class="div6">(4)transform:skew(30deg,20deg);</div>
+		<br /><br /><br /><br /><br />
+		<!-- 翻转 -->
+
+
+
+
+		<div class="hover1"><span class="p2">div:hover</span> { transform:translate(-40px,40px); } </div>
+		<div class="hover2"><span class="p2">div:hover</span> { transform:rotate(30deg); } </div>
+		<div class="hover3"><span class="p2">div:hover</span> { transform:scale(0.5,0.5); } </div>
+		<div class="hover4"><span class="p2">div:hover</span> { transform:skew(30deg,0deg); } 
+				<br /><br />与x轴相交的两条边逆旋转30°</div>
+		<div class="hover5"><span class="p2">div:hover</span> { transform:skew(30deg,20deg); } 
+				<br /><br />与y轴相交的两条边顺旋转20°</div>
+
+
+
+
+
+
+		<p class="p0">
+			<strong>兼容前缀:</strong><br /><br />Chrome: -webkit-<br />
+			<br />FF: -moz-<br />
+			<br />Opera: -o-<br />
+		</p>
+
+
+
+
+
+
+	</div>
+
+
+
+	
+	
+ </body>
+</html>

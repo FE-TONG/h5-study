@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3--transition</title>
+
+	<style type="text/css">
+		*{margin:0;padding:0;list-style:none;}
+		body{font-size:20px;font-family:"微软雅黑";}
+		a{text-decoration:none;}
+		img{border:none;}
+		div,h2,p{font-family:"微软雅黑";font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}
+
+
+		#main{width:800px;margin:10px auto;border:2px solid #09f; padding-bottom:200px;
+				position:relative; border-radius:10px;}
+
+		/* 手风琴1 */
+		#bgd{width:648px; height:350px; margin:50px auto; padding:50px;
+				border-radius:10px;}/*父级 相对定位*/
+
+		.box{width:400px; height:300px; margin:20px auto; border:5px solid #112233; cursor:pointer;					border-radius:5px; background:#112233;}
+
+		ul.list{max-height:300px;}
+
+		ul.list li{height:60px; background:#112233; overflow:hidden; transition:height 0.5s;}
+
+		ul.list li .listImg{height:60px; background:#000;  box-shadow:inset 0 0 0 5px #112233;
+				position:relative; text-align:center; line-height:60px; color:#fff; font-size:20px;
+				font-weight:bold;}
+		ul.list li .pic1{background:#09d;}
+		ul.list li .pic2{background:#a30;}
+		ul.list li .pic3{background:#0a0;}
+		ul.list li .pic4{background:#f6f;}
+		ul.list li .pic5{background:#da1;}
+
+		ul.list li .listCon{text-align:center; line-height:120px; color:#fff; font-size:20px;}
+
+		ul.list:hover li{height:30px;}
+		ul.list li:hover{height:180px;}
+
+		/* 矢量图形svg画图  类似HTML5的canvas */
+		.listImg svg {position:absolute; top:0; left:0;}
+		.listImg svg line{stroke-width:10; stroke:#fff; fill:none; transition:all 1.2s ease-in-out; opacity:0;} 
+		.listImg svg line.top, .listImg svg line.bottom {stroke-dasharray:400 400;}/* 画的是虚线 */
+		.listImg svg line.left, .listImg svg line.right {stroke-dasharray:60 60;}
+
+		ul.list li:hover svg line.top {transform:translateX(800px);}
+		ul.list li:hover svg line.bottom {transform:translateX(-800px);}
+		ul.list li:hover svg line.left {transform:translateY(-120px);}
+		ul.list li:hover svg line.right {transform:translateY(120px);}
+		ul.list li:hover svg line.top { opacity:1;}
+		ul.list li:hover svg line.bottom { opacity:1;}
+		ul.list li:hover svg line.left { opacity:1;}
+		ul.list li:hover svg line.right { opacity:1;}
+
+		/* 手风琴1 */
+		
+		/* 手风琴2 */
+		#wrap{width:680px; height:240px; overflow:hidden; margin:80px auto;
+			border:6px solid #ddd;}
+
+		#wrap ul{width:3000px;}
+		#wrap li{
+			width:113px; height:240px; position:relative; float:left;
+			border-left:1px solid #aaa; box-shadow:0 0 25px 10px rgba(0,0,0,0.4);
+			-moz-transition:all 0.5s;
+			-webkit-transition:all 0.5s;
+			transition:all 0.5s;
+		}
+		#wrap li img{display:block; width:480px;}
+
+		#wrap ul:hover li{width:40px;}
+		#wrap ul li:hover{width:480px;}
+
+		/* 遮罩层 */
+		#wrap p.title1{position:absolute; left:0; top:0; width:113px; height:240px;
+			background:rgba(0,0,0,0.25);
+			-moz-transition:all 0.5s;
+			-webkit-transition:all 0.5s;
+			transition:all 0.5s;}
+		#wrap p.title1 a{display:block; width:113px; height:240px; color:#fff; font-size:16px;
+			text-align:center; line-height:240px; font-weight:bold;
+			-moz-transition:all 0.5s;
+			-webkit-transition:all 0.5s;
+			transition:all 0.5s;}
+		#wrap p.title2{position:absolute; left:0; bottom:0; width:113px; height:240px;
+			background:rgba(0,0,0,0.25);
+			-moz-transition:all 0.5s;
+			-webkit-transition:all 0.5s;
+			transition:all 0.5s;}
+		#wrap p.title2 a{display:block; width:113px; height:240px; color:#fff; font-size:16px;
+			text-align:center; line-height:240px; font-weight:bold;
+			-moz-transition:all 0.5s;
+			-webkit-transition:all 0.5s;
+			transition:all 0.5s;}
+
+		/* 遮罩层的hover */
+		#wrap ul:hover li p.title1{width:40px;}
+		#wrap ul:hover li p.title1 a{width:40px;}
+		#wrap ul li:hover p.title1{width:480px; height:40px; text-align:center; line-height:40px;
+			background:rgba(0,0,0,0.5);}
+		#wrap ul li:hover p.title1 a{width:480px; height:40px; text-align:center; line-height:40px;}
+
+		#wrap ul:hover li p.title2{width:40px;}
+		#wrap ul:hover li p.title2 a{width:40px;}
+		#wrap ul li:hover p.title2{width:480px; height:40px; text-align:center; line-height:40px;
+			background:rgba(0,0,0,0.5);}
+		#wrap ul li:hover p.title2 a{width:480px; height:40px; text-align:center; line-height:40px;}
+		/* 手风琴2 */
+
+
+
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 -->
+		<h2><strong>CSS3</strong>~~手风琴</h2><br/>
+		<p>手风琴，不管布局怎么变，主要思想还是首先让整组元素的宽度(高度)都变窄，然后同时被选中的那一个元素的宽度(高度)变宽。</p>
+		<!-- 标题 -->
+		<hr style="border:1px dashed#09d;"/>
+		<!-- 知识点说明 开始 -->
+		<p class="p0">1、竖直</p>
+		<p>图为盒子box包裹的一组ul li元素，垂直排列；(实现步骤 如下：)<br/><br/>(1)当鼠标移到这组元素上时，每个li元素<span class="p0">高度</span>统一变窄为30px，<br/>即 <span class="p1">ul:hover li{ <span class="p0">height:</span>30px; }</span><br/>(2)同时鼠标移到某一个元素上时，当前这个li元素<span class="p0">高度</span>独自变宽为180px，即 <span class="p1">ul li:hover{ <span class="p0">height:</span>180px; }</span><br/><br/>其他布局：每个li之间的间隔为头部内置一个div(颜色不同)，<br/>其box-shadow: <span class="p0">inset</span> 0 0 0 5px #112233;</p><br />
+		<p>过渡：ul li{<span class="p3">transition:</span> <span class="p0">height</span> 0.5s <span class="p0">ease-in-out</span>;}</p>
+		<!-- 知识点说明 结束 -->
+		
+		<div id="bgd">
+			<div class="box">
+				<ul class="list">
+					<li>
+						<p class="listImg pic1"><!-- svg 画四周的四条线 -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
+								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
+								<line class="left" x1="0" y1="0" x2="0" y2="180"></line>		
+								<line class="right" x1="400" y1="60" x2="400" y2="-120"></line>
+							</svg>
+							1	
+						</p>
+						<div class="listCon"><img src="http://image.zcool.com.cn/62/7/m_1246880812502.jpg" width="400" height="120" /></div>
+					</li>
+					<li>
+						<p class="listImg pic2"><!-- svg 画四周的四条线 -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
+								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
+								<line class="left" x1="0" y1="0" x2="0" y2="180"></line>		
+								<line class="right" x1="400" y1="60" x2="400" y2="-120"></line>
+							</svg>
+							2
+						</p>
+						<div class="listCon"><img src="http://zcimg.zcool.com.cn/zcimg/b_625c543131430000016840f10119.jpg" width="400" height="120" /></div>
+					</li>
+					<li>
+						<p class="listImg pic3"><!-- svg 画四周的四条线 -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
+								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
+								<line class="left" x1="0" y1="0" x2="0" y2="180"></line>		
+								<line class="right" x1="400" y1="60" x2="400" y2="-120"></line>
+							</svg>
+							3
+						</p>
+						<div class="listCon"><img src="http://zcimg.zcool.com.cn/zcimg/b_4b8453b58b730000015fdf4ec950.jpg"" width="400" height="120" /></div>
+					</li>
+					<li>
+						<p class="listImg pic4"><!-- svg 画四周的四条线 -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
+								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
+								<line class="left" x1="0" y1="0" x2="0" y2="180"></line>		
+								<line class="right" x1="400" y1="60" x2="400" y2="-120"></line>
+							</svg>
+							4
+						</p>
+						<div class="listCon"><img src="http://image.zcool.com.cn/2014/49/51/b_1390200491534.jpg" width="400" height="120" /></div>
+					</li>
+					<li>
+						<p class="listImg pic5"><!-- svg 画四周的四条线 -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
+								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
+								<line class="left" x1="0" y1="0" x2="0" y2="180"></line>		
+								<line class="right" x1="400" y1="60" x2="400" y2="-120"></line>
+							</svg>
+							5
+						</p>
+						<div class="listCon"><img src="http://zcimg.zcool.com.cn/zcimg/b_7e8e53ace0600000016785a640b2.jpg" width="400" height="120" /></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<p class="p0">2、水平</p>
+		<p>图为盒子wrap包裹的一组ul li元素，水平左浮动；(实现步骤 如下：)<br/><br/>(1)当鼠标移到这组元素上时，每个li元素<span class="p0">宽度</span>统一变窄为40px，<br/>即 <span class="p1">ul:hover li{ <span class="p0">width:</span>40px; }</span><br/>(2)同时鼠标移到某一个元素上时，当前这个li元素<span class="p0">宽度</span>独自变宽为480px，即 <span class="p1">ul li:hover{ <span class="p0">width:</span>480px; }</span></p><br/>
+		<p>过渡：ul li{<span class="p3">transition:</span> <span class="p0">width</span> 0.5s;}</p>
+		<!-- 手风琴2 开始 -->
+		<div id='wrap'>
+			<ul>
+				<li>	
+					<a href="#">
+						<img  src='http://image.zcool.com.cn/62/7/m_1246880812502.jpg' width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">1</a></p>    <!-- 上遮罩层 -->
+					<p class='title2'><a href="#">1</a></p>		<!-- 下遮罩层 -->
+				</li>
+				<li>
+					<a href="#">
+						<img  src='http://zcimg.zcool.com.cn/zcimg/b_625c543131430000016840f10119.jpg' width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">2</a></p>
+					<p class='title2'><a href="#">2</a></p>
+				</li>
+				<li>
+					<a href="#">
+						<img  src='http://image.zcool.com.cn/2013/22/37/b_1388485803002.jpg' width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">3</a></p>
+					<p class='title2'><a href="#">3</a></p>
+				</li>
+				<li>
+					<a href="#">
+						<img  src='http://image.zcool.com.cn/2014/49/51/b_1390200491534.jpg' width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">4</a></p>
+					<p class='title2'><a href="#">4</a></p>
+				</li>
+				<li>
+					<a href="#">
+						<img   src='http://zcimg.zcool.com.cn/zcimg/b_7e8e53ace0600000016785a640b2.jpg' width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">5</a></p>
+					<p class='title2'><a href="#">5</a></p>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://zcimg.zcool.com.cn/zcimg/b_4b8453b58b730000015fdf4ec950.jpg" width="480" height="240">
+					</a>
+					<p class='title1'><a href="#">6</a></p>
+					<p class='title2'><a href="#">6</a></p>
+				</li>
+			</ul>
+		</div>
+		<!-- 手风琴2 结束 -->
+
+
+	</div>
+	<!-- main 结束 -->
+
+	
+
+
+
+
+	
+ </body>
+</html>

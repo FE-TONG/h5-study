@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+ <head>
+  <meta  charset="utf-8"/>
+  <title>Hctsmsl 35</title>
+
+	<style type="text/css">		
+		body{font-family:"Microsoft YaHei";}
+		#mainBox{width:260px;height:826px; overflow:hidden;
+				position:relative; border-radius:2px;}
+		#content{height:2100px; position:absolute; left:0; top:0; 	/*课程目录内容*/
+				padding:0px 8px 0px 5px;}
+		.scrollDiv{ width:12px;  position:absolute; top:0;	/*滚动条div*/
+				background:#09f;border-radius:10px;}
+
+		#mainBox ul{padding:0px;}
+		#mainBox ul li{width:230px; height:30px; background:#ECF3FA; margin-bottom:5px;	
+				list-style:none;line-height:30px; border-radius:2px; color:#fff; text-align:left; 
+				font-weight:bold;text-indent:9px; cursor:pointer;
+				-webkit-transition:background 1.5s; /*过渡，li:hover 背景色有个渐变时间*/
+				-moz-transition:background 1.5s;}
+		#mainBox ul li.title{background:#3D95D5; /*课程标题*/
+				-webkit-animation:course 15s;	/*动画名称和时间*/
+				-moz-animation:course 15s;
+				-webkit-animation-iteration-count:infinite;	
+				-moz-animation-iteration-count:infinite;}
+
+		@-webkit-keyframes course{/*课程动画标题*/	
+			20%	{background:#3D95D5;}
+			40% {background:#FFD802;}
+			60% {background:#25AD3F;}
+			80% {background:#E5020F;}
+		}
+		@-moz-keyframes course{			
+			20%	{background:#3D95D5;}
+			40% {background:#FFD802;}
+			60% {background:#25AD3F;}
+			80% {background:#E5020F;}
+		}
+
+
+		#mainBox ul li a{color:#333; font-size:15px; text-decoration:none; width:230px; 
+				height:30px; display:block;}
+		#mainBox ul li:hover{background:#3D95D5;}
+		#mainBox ul li a:hover{color:#fff;}
+
+		#mainBox ul li a.active{background:#3D95D5; color:#fff;}/*jquery选择中的样式*/
+	</style>
+
+ </head>
+ <body>
+
+  <div id="mainBox">
+	<div id="content">
+		<ul>
+			<li class="title">HTML5&CSS3学习代码集</li>
+			<li><a href="../web/audio、video。html" target="f_right">四,五、video,audioJS基础操作</a></li>
+			<li><a href="../web/border-image.html" target="f_right">六、border-image</a></li>
+			<li><a href="../web/background.html" target="f_right">七、background</a></li>
+			<li><a href="../web/text-shadow��font.html" target="f_right">八、文本阴影..自定义字体</a></li>
+			<li><a href="../web/transform.html" target="f_right">九,十、transform</a></li>
+			<li><a href="../web/frameset.html" target="f_right">十一、frameset</a></li>
+			<li><a href="../web/iframe.html" target="f_right">十二、iframe</a></li>
+			<li><a href="../web/rotateXY.html" target="f_right">十三、3D 转换</a></li>
+			<li><a href="../web/transition.html" target="f_right">十四、transition</a></li>
+			<li><a href="../web/Project1.html" target="f_right">十五、手风琴</a></li>
+			<li><a href="../web/Project2.html" target="f_right">十六、翻转卡片</a></li>
+			<li><a href="../web/Project3.html" target="f_right">十七、动画(无缝滚动)</a></li>
+			<li><a href="../web/Project3.1.html" target="f_right">十八、动画(完善和垂直滚动)</a></li>
+			<li><a href="../web/Response.html" target="f_right">十九、响应式</a></li>
+			<li><a href="../web/iPad.html" target="f_right">二十、响应式代码优化</a></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+  </div>
+
+	
+		
+
+
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/scrollBar.js"></script>
+
+
+	<script type="text/javascript">
+
+		$("#mainBox ul li a").click(function(){
+		
+			$(this).addClass("active").parent().siblings().find("a").removeClass("active");
+
+		});
+		var body = document;
+		body.onresize = function(){
+			console.log('width:'+window.innerWidth)
+			console.log('height:'+window.innerHeight);
+		}
+		console.log('width:'+window.innerWidth)
+		console.log('height:'+window.innerHeight);
+		console.log('width:'+window.outerWidth)
+		console.log('height:'+window.outerHeight)
+	</script>
+
+
+
+
+ </body>
+</html>

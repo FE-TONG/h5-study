@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+  <meta name="Generator" content="EditPlus"/>
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>CSS3--animation</title>
+
+	<style type="text/css">
+
+		body{font-size:20px;font-family:"微软雅黑";}
+		div,h2,p{font-family:"微软雅黑";font-size:24px; border-radius:10px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}
+
+
+		#main{width:800px;height:2500px;margin:0px auto;border:2px solid #09f;
+				position:relative;}
+
+		/* 背景 */
+		#bigbox{width:328px; height:488px; margin:50px auto; background:#112233; 
+				position:relative; }/*父级 相对定位*/
+
+
+
+
+		.box {width: 300px; height: 460px; position: relative; background: #112233;
+			display: inline-block; margin: 15px 15px; cursor: pointer; color: #09c;
+			text-align:center; box-shadow: inset 0 0 0 10px #112233;
+
+			animation:move0 2s;
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}
+		/* 文字动画 */
+		@keyframes move0{
+
+			from{color:#fff;}
+			to  {color:#09d;}
+		}
+
+		.box .con {width: 300px; font-family: "Ruthie", cursive; font-size: 180px; 
+			height: 300px;	margin-bottom: 30px; font-weight: 400; 
+			background:url(images/2345.png) no-repeat center center;
+			animation:c 1.5s linear;
+			animation-iteration-count:infinite;}
+		/* 旋转风车动画 */
+		@keyframes c{
+		
+			from{transform:rotate(0deg);}
+			to  {transform:rotate(-360deg);}
+		
+		
+		}
+
+		.box span {display: block; font-weight: bold; padding: 5px;
+			letter-spacing: 1px; font-size: 18px;}
+
+		.box .con, .box span {-webkit-transition: color 0.4s 0.5s; 
+			transition: color 0.4s 0.5s;}
+
+		
+		.box svg {position: absolute; top: 0; left: 0;}
+
+		.box svg line {stroke-width: 8; stroke: #ecf0f1; fill: none;
+			-webkit-transition: all .8s ease-in-out;
+			transition: all .8s ease-in-out;}
+
+		.box svg line.top,
+		.box svg line.bottom {stroke-dasharray: 330 240;}
+
+		.box svg line.left,
+		.box svg line.right {stroke-dasharray: 490 400;}
+		/* 上线 */
+		.box svg line.top{
+			animation:move1 2s;
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}/* 下线 */
+		.box svg line.bottom {
+			animation:move2 2s;
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}/* 左线 */
+		.box svg line.left {
+			animation:move3 2s;
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}/* 右线 */
+		.box svg line.right {
+			animation:move4 2s;
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}
+		/* 上线动画 */
+		@keyframes move1{
+		
+			from{stroke: #ecf0f1; transform: translateX(0px);}
+			to  {stroke: #09d; transform: translateX(-600px);}
+		
+		}/* 下线动画 */
+		@keyframes move2{
+		
+			from{stroke: #ecf0f1; transform: translateX(0px);}
+			to  {stroke: #09d; transform: translateX(600px);}
+		
+		}/* 左线动画 */
+		@keyframes move3{
+		
+			from{stroke: #ecf0f1; transform: translateY(0px);}
+			to  {stroke: #09d; transform: translateY(920px);}
+		
+		}/* 右线动画 */
+		@keyframes move4{
+		
+			from{stroke: #ecf0f1; transform: translateY(0px);}
+			to  {stroke: #09d; transform: translateY(-920px);}
+		
+		}
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 -->
+		<h2><strong>CSS3</strong>~~动画 animation</h2>
+		<!-- 标题 -->
+
+		<!-- 知识点说明 开始 -->
+		<p class="p1"><strong><span class="p0">1、</span> transition</strong>的含义</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;过渡就是给元素样式的改变添加一个过程。
+		<p class="p1"><strong><span class="p0">2、</span> transition</strong>的组成</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a、要改变的css属性 &nbsp;&nbsp; b、改变时长。
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>即(1)</span> transition: 属性 时间 ;</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition: 属性 时间 , 属性 时间 , 属性 时间 , 属性 时间 , ...</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all 时间 ;</p>
+		<!-- 知识点说明 结束 -->
+		<hr class="hr1" />
+
+		<!-- 动画box -->
+		<div id="bigbox">
+			<div class="box">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+					<line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+					<line class="left" x1="0" y1="460" x2="0" y2="-920"></line>
+					<line class="bottom" x1="300" y1="460" x2="-600" y2="460"></line>
+					<line class="right" x1="300" y1="0" x2="300" y2="1380"></line>
+				</svg>
+				<div class="con"></div>
+				<span>2014</span>
+				<span>animation</span>
+			</div>
+		</div>
+		<!-- 动画box -->
+		
+
+
+
+
+
+
+
+
+
+
+	</div>
+	<!-- main 结束 -->
+
+	
+
+
+
+
+	
+ </body>
+</html>

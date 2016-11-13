@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<title>无缝滚动</title>
+	<meta name="keywords" content="无缝滚动,无缝滚动,无缝滚动" />
+	<meta name="description" content="无缝滚动无缝滚动无缝滚动无缝滚动无缝滚动无缝滚动" />
+
+	<style type="text/css">
+	
+		*{margin:0;padding:0;list-style:none;}
+		body{font-size:20px;font-family:"微软雅黑";}
+		a{text-decoration:none;}
+		img{border:none;}
+		div,h2,p{font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px;color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}/*淡墨绿*/
+		.p2{color:yellow;}/*div:hover 字体颜色*/
+		.p3{color:blue;}									/* 自定义字体 */
+		@font-face{font-family:dear5609; src:url(font/Generic_Teenager.ttf);}
+
+
+
+
+		/*居中main框架*/
+		#main{width:800px; margin:0px auto; border:2px solid #09f; /* padding-bottom:200px; */
+			position:relative; border-radius:10px; background:#20252B; 
+			perspective:1800px; -webkit-perspective:1800px;}
+
+	
+		/* 无缝滚动实例 */
+		/* 标题栏 */
+		p.title{height:50px; border-bottom:2px solid #EF4900; 
+			color:#fff;text-indent:5px;}
+		p.title a{width:140px; height:50px; display:inline-block; background:#EF4900;/* 标题文字 */
+			text-align:center; line-height:50px; color:#fff; font-size:20px;}
+
+
+		.box1, .box2{width:660px; height:150px; margin:100px auto; margin-bottom:0px;
+			padding-top:20px; padding-bottom:20px; background:#fff; overflow:hidden;
+			position:relative; left:0px; top:0px; cursor:pointer;}		
+
+		/* 滚动 图片框 */				
+		ul.list{
+			width:1920px; height:150px; 
+			position:absolute; left:0px; top:20px;
+			animation:slide 12s linear; 							/*定义动画slide*/
+			animation-iteration-count:infinite;
+		} 		
+	
+		ul.list li{width:150px; height:150px; float:left; 
+			border:5px solid #fff; border-top:none; border-bottom:none;}
+				
+		/*ul.list 动画*/
+		@keyframes slide
+		{
+			from{left:0px;}
+			to{left:-800px;}
+		}	
+		
+		/*svg矢量图形画线条*/
+		.box1 svg, .box2 svg{position:absolute; left:-800px; top:3px;  		
+			animation:slide2 20s linear; 							/*定义动画slide2*/
+			animation-iteration-count:infinite;}			
+
+		.box1 svg line.top, .box2 svg line.top{stroke-width:27px;}
+		.box1 svg line.bottom, .box2 svg line.bottom{stroke-width:14px;}
+		
+		.box1 svg line, .box2 svg line
+		{
+			stroke:#20252B; fill:none; 
+			stroke-dasharray:15 20;		 /*svg  虚线点长度  虚线间隔长度*/
+		}
+			
+		
+		/*box svg line 动画*/
+		@keyframes slide2
+		{
+			from{left:-800px;}
+			to{left:0px;}
+		}
+			
+		/*box2倒影框 样式覆盖重写 X轴旋转-110度，X轴放大1.07倍，透明度0.2*/
+		.box2{margin:50px auto; opacity:0.2;
+			transform:rotateX(-110deg) scaleX(1.07);}	/*transform可以连着写*/
+		
+		
+		/* 最后步骤分析说明 */
+		.text{padding-left:60px; padding-bottom:200px; color:#fff;}
+		.text p{color:#fff; font-size:18px;}
+		
+		/* .box1:hover ul{animation-play-state:paused}
+		.box1:hover svg{animation-play-state:paused} */
+		
+		
+		/* 无缝滚动实例 结束 */
+
+
+
+
+
+
+/*兼容 webkit 处理，不过除chrome和FF 其他浏览器都不支持透视*/
+		
+		ul.list{
+			width:1920px; height:150px; 
+			position:absolute; left:0px; top:20px;
+			-webkit-animation:slide 12s linear; 				/*定义动画slide*/
+			-webkit-animation-iteration-count:infinite;
+		} 		
+		/*ul.list 动画*/
+		@-webkit-keyframes slide
+		{
+			from{left:0px;}
+			to{left:-800px;}
+		}	
+		/*svg矢量图形画线条*/
+		.box1 svg, .box2 svg{position:absolute; left:-800px; top:3px;  		
+			-webkit-animation:slide2 20s linear; 				/*定义动画slide2*/
+			-webkit-animation-iteration-count:infinite;}
+		/*box svg line 动画*/
+		@-webkit-keyframes slide2
+		{
+			from{left:-800px;}
+			to{left:10px;}
+		}
+		/*box2倒影框 样式覆盖重写*/
+		.box2{margin:50px auto; opacity:0.2;
+			-webkit-transform:rotateX(-110deg) scaleX(1.07);}	/*transform可以连着写*/
+		
+
+/*兼容 webkit 处理*/
+
+
+
+
+	</style>
+
+ </head>
+ <body>
+
+	<!-- main 开始 -->
+	<div id="main">
+
+		<!-- 标题 --><br/>
+		<h2><strong>CSS3</strong>~~animation</h2><br/>
+		<p style="color:#fff; text-indent:20px;">动画</p>
+		<p style="color:#fff; text-indent:20px;">animation: 动画名称  持续时间；</p>
+        <p style="color:#fff; text-indent:20px; margin-top:30px;">动画规则</p>
+        <p style="color:#fff; text-indent:20px; margin-top:15px;">@keyframes slide { /*动画规则  动画名称*/</p>
+        <p style="color:#fff; text-indent:60px; margin-top:15px;">from { 属性 : 值 ; } /* 从{ .... } */</p>
+        <p style="color:#fff; text-indent:60px;">to { 属性 : 值 ; } /* 到{ .... } */</p>
+        <p style="color:#fff; text-indent:20px;">}</p>
+		<p style="color:#fff; text-indent:20px; margin-top:30px;">播放次数</p>
+		<p style="color:#fff; text-indent:20px;">animation-iteration-count：n (次数) | infinite (无限循环) ;</p>
+		
+		<!-- 标题 -->
+		<br />
+
+	<!-- 无缝滚动实例 开始 -->
+		
+        <!--实例标题-->
+		<p class="title"><a href="javascript:;">无缝滚动</a></p>
+        
+    	<!-- 图片框 开始 -->
+		<div class="box1">	
+			<ul class="list">
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li> 
+            </ul>
+            <!--svg画上下两根滚动虚线-->       
+            <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="100%">
+				<line class="top" x1="0" y1="0" x2="1900" y2="0"></line>
+				<line class="bottom" x1="0" y1="178" x2="1900" y2="178"></line>
+			</svg>
+		</div>
+        <!-- 图片框 结束 -->
+        
+        <!-- 倒影图片框 开始 -->
+        <div class="box2">	
+			<ul class="list">
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic1.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic2.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic3.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic4.jpg" alt="" width="150" height="150" /></li>
+                <li><img src="images/pic5.jpg" alt="" width="150" height="150" /></li> 
+            </ul>
+            <!--svg画上下两根滚动虚线-->       
+            <svg xmlns="http://www.w3.org/2000/svg" width="300%" height="100%">
+				<line class="top" x1="0" y1="0" x2="1900" y2="0"></line>
+				<line class="bottom" x1="0" y1="178" x2="1900" y2="178"></line>
+			</svg>
+		</div>
+        <!-- 倒影图片框 结束 -->
+        
+	<!-- 无缝滚动实例 结束 -->
+    
+    	<!--步骤说明 开始-->
+		<div class="text">
+            步骤：
+            <p style="margin-top:20px;">
+            	1、构建一个盒子box为图片框，宽度660px，相对定位，overflow: hidden ; 
+            </p>
+            <p style="margin-top:20px;">
+            	2、在box中构建一个ul.list,宽度足够长，相对box绝对定位，并定义动画属性，无限循环</p>
+            <p style="margin-top:20px;">
+            	3、ul中构建10个li水平左浮动，每5个为一组，两组图片一样，box可视li为4个
+            </p>
+            <p>这样当第1个li往左边滚出，第6个li刚从右边滚入，这两个li放置的图片相同，实现无缝滚动</p>
+            <p style="margin-top:20px;">4、@keyframes slide</p>
+            <p>{</p>
+            <p style="text-indent:20px;">from{ left: 0px ; }</p>
+            <p style="text-indent:20px;">to{ left: -800px ; }</p>
+			<p>}</p>
+            <p style="margin-top:20px;">
+            	每个li 160px宽(包括border)，往左滚动5个li，所以left: -800px ;
+            </p>
+            <p style="margin-top:20px;">
+            	倒影，X轴旋转就可以了，transform: ratateX(-110deg); 再加透视效果
+            </p>
+        </div>
+		<!--步骤说明 结束-->
+
+
+	</div>
+	<!-- main 结束 -->
+
+ </body>
+</html>
