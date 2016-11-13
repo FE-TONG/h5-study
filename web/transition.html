@@ -1,67 +1,56 @@
 <!doctype html>
 <html>
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
-  <meta name="Generator" content="EditPlus"/>
-  <meta name="Author" content=""/>
-  <meta name="Keywords" content=""/>
-  <meta name="Description" content=""/>
-  <title>CSS3--transition</title>
+  	<meta charset="UTF-8"/>
+  	<title>CSS3--transition</title>
 
 	<style type="text/css">
 
-		body{font-size:20px;font-family:"Î¢ÈíÑÅºÚ";}
-		div,h2,p{font-family:"Î¢ÈíÑÅºÚ";font-size:24px; border-radius:10px;}
+		body{font-size:20px;font-family:"microsoft yahei";}
+		div,h2,p{font-family:"microsoft yahei";font-size:24px; border-radius:10px;}
 		hr{border:2px dashed red;margin:20px auto;}
 		.hr1{border:1px dashed blue;}
 		h2{font-size:32px;color:blue;}
 		.p0{color:red;}
-		.p1{color:#090;}/*µ­Ä«ÂÌ*/
-		.p2{color:yellow;}/*div:hover ×ÖÌåÑÕÉ«*/
+		.p1{color:#090;}
+		.p2{color:yellow;}
 		.p3{color:blue;}
 
 
 		#main{width:800px;height:2500px;margin:0px auto;border:2px solid #09f;
 				position:relative;}
-
-		/* ÓÎÏ·±³¾° */
 		#box{width:648px; height:488px; margin:50px auto; background:url(images/floor.jpg); 
-				position:relative; overflow:hidden;}/*¸¸¼¶ Ïà¶Ô¶¨Î»*/
+				position:relative; overflow:hidden;}
 
-		/* ×Óµ¯¶¯»­ */
 		div.bullet{width:20px; height:20px; border-radius:10px; background:blue;
 				 position:absolute; right:0px; top:36px;
 				 -moz-animation:zidan 0.1s;
 				 -webkit-animation:zidan 0.1s;
 				 -moz-animation-iteration-count:infinite;
-				 -webkit-animation-iteration-count:infinite;}/*×Óµ¯ÎŞÏŞÑ­»·*/
-		@-moz-keyframes zidan{/*FF ¶¨Òå¶¯»­*/
+				 -webkit-animation-iteration-count:infinite;}
+		@-moz-keyframes zidan{
 				from {background:blue; left:100px;}
 				to {background:red; left:350px;}
 		}
-		@-webkit-keyframes zidan{/*Chrome ¶¨Òå¶¯»­*/
+		@-webkit-keyframes zidan{
 				from {background:blue; left:100px;}
 				to {background:red; left:350px;}
-		}/* ×Óµ¯¶¯»­ */
+		}
 		
-		/* Ì¹¿Ë */
 		div.tank{width:100px; height:100px; background:url(images/tank.png);
 				position:absolute; left:265px; top:160px; z-index:5; border:1px solid white;
 				-webkit-transition:all 9999s;
 				-moz-transition:all 9999s;
 				transition:all 9999s;}
-		/* Ì¹¿Ë */
 
-		/* ·½Ïò¼ü */
+
 		img.ctrl{position:absolute; width:60px; height:60px; z-index:10; 
 				border-radius:30px; cursor:pointer;}
 		img.up {left:540px; top:354px; background:url(images/up.png);}
 		img.down {left:540px; top:430px; background:url(images/down.png);}
 		img.left {left:502px; top:392px; background:url(images/left.png);}
 		img.right {left:578px; top:392px; background:url(images/right.png);}
-		/* ·½Ïò¼ü */
-
-		/* ¿ØÖÆĞ§¹û */
+		
 		img.ctrl:active ~ div.tank {
 				-webkit-transition: 1.5s linear, transform 0.5s;
 				-moz-transition: 1.5s linear, transform 0.5s;
@@ -70,16 +59,12 @@
 		img.down:active ~ div.tank {top:386px; transform:rotate(90deg);}
 		img.left:active ~ div.tank {left:0; transform:rotate(-180deg);}
 		img.right:active ~ div.tank {left:546px; transform:rotate(0deg);}
-		/* ¿ØÖÆĞ§¹û */
 
-		/* Êó±ê°´ÏÂµÄĞ§¹û */
 		img.up:active{background:url(images/up1.png);}
 		img.down:active{background:url(images/down1.png);}
 		img.left:active{background:url(images/left1.png);}
 		img.right:active{background:url(images/right1.png);}
-		/* Êó±ê°´ÏÂµÄĞ§¹û */
 
-		/* ·½Ïò¼üÍ¼Ê¾ */
 		.btns{width:648px; height:300px; margin:20px auto; border:1px solid black;
 				background:url(images/btns.png) no-repeat center center; position:relative;}
 		.btns p.txt{color:black; position:absolute;}
@@ -87,13 +72,7 @@
 		.btns p.R{left:500px; top:100px;}
 		.btns p.B{left:180px; top:230px;}
 		.btns p.L{left:0px; top:100px;}
-		/* ·½Ïò¼üÍ¼Ê¾ */
-		
-
-
-
-		
-		/* ÓÒÉÏ½ÇĞ¡Ì¹¿Ë */
+	
 		.wheel{width:80px; height:60px; background:green;
 				position:absolute; left:50px; top:15px;
 				margin:0px 500px; cursor:pointer;
@@ -123,93 +102,33 @@
 			-webkit-transform: translateX(-1200px);
 			-moz-transform: translateX(-1200px);
 		}
-		/* ÓÒÉÏ½ÇĞ¡Ì¹¿Ë */
-
-
-
-
-
-
-
-
 
 	</style>
 
  </head>
  <body>
 
-	<!-- main ¿ªÊ¼ -->
+	<!-- main å¼€å§‹ -->
 	<div id="main">
+		<!-- æ ‡é¢˜ -->
+		<h2><strong>CSS3</strong>~~è¿‡æ¸¡ transition</h2>
+		<!-- æ ‡é¢˜ -->
 
-		<!-- ±êÌâ -->
-		<h2><strong>CSS3</strong>~~¹ı¶É transition</h2>
-		<!-- ±êÌâ -->
-
-		<!-- ÖªÊ¶µãËµÃ÷ ¿ªÊ¼ -->
-		<p class="p1"><strong><span class="p0">1¡¢</span> transition</strong>µÄ¸ÅÄî</p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¹ı¶É¾ÍÊÇ¸øÔªËØÑùÊ½µÄ±ä»»Ìí¼ÓÒ»¸ö½¥±ä¹ı³Ì¡£
-		<p class="p1"><strong><span class="p0">2¡¢</span> transition</strong>µÄ×é³É  (±ØĞë¹æ¶¨Á½ÏîÄÚÈİ£¬¶à¸öÊôĞÔÓÉ¶ººÅ¸ô¿ª)</p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a¡¢Òª¸Ä±äµÄcssÊôĞÔ &nbsp;&nbsp; b¡¢Ğ§¹ûÊ±³¤¡£
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>¼´(1)</span> transition: ÊôĞÔ Ê±¼ä ;</p>
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition: ÊôĞÔ Ê±¼ä , ÊôĞÔ Ê±¼ä , ÊôĞÔ Ê±¼ä , ÊôĞÔ Ê±¼ä , ...</p>
-		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all Ê±¼ä ;</p>
-		<!-- ÖªÊ¶µãËµÃ÷ ½áÊø -->
+		<!-- çŸ¥è¯†ç‚¹è¯´æ˜ å¼€å§‹ -->
+		<p class="p1"><strong><span class="p0">1ã€</span> transition</strong>çš„æ¦‚å¿µ</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;è¿‡æ¸¡å°±æ˜¯ç»™å…ƒç´ æ ·å¼çš„å˜æ¢æ·»åŠ ä¸€ä¸ªæ¸å˜è¿‡ç¨‹ã€‚
+		<p class="p1"><strong><span class="p0">2ã€</span> transition</strong>çš„ç»„æˆ (å¿…é¡»è§„å®šä¸¤é¡¹å†…å®¹ï¼Œå¤šä¸ªå±æ€§ç”±é€—å·éš”å¼€)</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aã€è¦æ”¹å˜çš„csså±æ€§  &nbsp;&nbsp; bã€æ•ˆæœæ—¶é•¿ã€‚
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>å³(1)</span> transition: å±æ€§ æ—¶é—´ ;</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(2)</span> transition:å±æ€§ æ—¶é—´ , å±æ€§ æ—¶é—´ , å±æ€§ æ—¶é—´ , å±æ€§ æ—¶é—´ , ...</p>
+		<p class="p0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>(3)</span> transition: all æ—¶é—´ ;</p>
+		<!-- çŸ¥è¯†ç‚¹è¯´æ˜ ç»“æŸ -->
 		<hr class="hr1" />
-		<p class="p1"><strong><span class="p0">3¡¢</span>transition</strong>µÄÓ¦ÓÃ</p>
-		<p class="p3">ÏòÔªËØµÄleft¡¢topºÍ rotate( ) Ìí¼Ó¹ı¶ÉĞ§¹û</p>
-		<!-- Ì¹¿ËÓë·½Ïò¼ü -->
-		(1)Êó±ê°´×¡·½Ïò¼ü²Ù¿ØÌ¹¿Ë£º
-		<div id="box">
-			<img class="ctrl up" />
-			<img class="ctrl down" />
-			<img class="ctrl left" />
-			<img class="ctrl right" />
-			<div class="tank" id="tanke"><div class="bullet" id="zidan"></div></div>
-			<!-- ÓÒÉÏ½ÇĞ¡Ì¹¿Ë -->
-			<div class="wheel">
-				<div class="roof">
-					<span>hover</span>
-					<p class="gun"></p>
-				</div>
-				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-					<line class="wheelR" x1="0" y1="0" x2="3200" y2="0"></line>
-					<line class="wheelL" x1="0" y1="60" x2="3200" y2="60"></line>
-				</svg>
-			</div>
-			<!-- ÓÒÉÏ½ÇĞ¡Ì¹¿Ë -->
-
-		</div>
-		<!-- Ì¹¿ËÓë·½Ïò¼ü -->
-
-		<!-- ÊÂÀıËµÃ÷ ¿ªÊ¼-->
-		(2)·½Ïò¼ü¶ÔÌ¹¿ËµÄ²Ù×÷ÈçÏÂ---> <span class="p0">transition:ÒÆ¶¯ Ê±³¤1.5s , Ğı×ª Ê±³¤0.5s ;</span>
-		<div class="btns">
-			<p class="txt T">top:0px; rotate(<span class="p3">-90deg</span>);</p>
-			<p class="txt R">left:546px;<br />rotate(<span class="p3">0deg</span>);</p>
-			<p class="txt B">top:386px; rotate(<span class="p3">90deg</span>);</p>
-			<p class="txt L">left:0px;<br />rotate(<span class="p3">-180deg</span>);</p>
-		</div>
-		(3)´úÂëÈçÏÂ£º<br />
-		<span style="font-size:20px;">( ctrlÊÇËÄ¸ö·½Ïò¼üµÄ¹²Í¬ÑùÊ½£¬tankÎªÌ¹¿Ë£¬ÕâÀï»¹ÓÃµ½cssÎ±Àà£ºactive</span><br /><span style="font-size:20px;">active:Êó±êµã»÷Ê±Ëù·¢ÉúµÄÑùÊ½£¬ÀàËÆÓÚhover )</span><br /><br />
-		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">ctrl</span>:<span class="p1">active</span> ~ div.tank {<span class="p0">transition:</span> 1.5s linear, transform 0.5s;}<br /><br />
-		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">up</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">top:0; transform:rotate(-90deg);</a>}<br />
-		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">down</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">top:386px; transform:rotate(90deg);</a>}<br />
-		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">left</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">left:0; transform:rotate(-180deg);</a>}<br />
-		&nbsp;&nbsp;&nbsp;&nbsp;img.<span class="p0">right</span>:<span class="p1">active</span> ~ div.tank {<a href="javascript:;">left:546px; transform:rotate(0deg);</a>}<br /><br />
-		<span style="font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ö®ËùÒÔ£¬Ì¹¿Ë¾­¹ıtransitionºó ËÉ¿ªÊó±êËüÃ»ÓĞ»Øµ½Ô­À´µÄÎ»ÖÃ£¬¶øÊÇ¿ØÖÆËü×ßµ½ÄÄÀïËü¾ÍÍ£ÔÚÄÄÀï£¬ÕâÊÇÒòÎªÔÚÌ¹¿ËµÄdivÖĞ¸ø¶¨ÁËÒ»¸ötransition¼´div.tank{ transition:all 9999s; }£¬Ê±¼äÎª9999s£¬Ê±¼ä½üËÆÎŞÏŞ´ó£¬ËÙ¶È¾ÍÂıÖÁÎª0(¾²Ö¹²»¶¯)£»Ö»ÓĞactive×÷ÓÃÓÚËü²Å»áÒÆ¶¯¡£</span><br /><br />
-
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¸ødiv.tankÌí¼ÓÁËtransition¾­¹ı¹ı¶ÉÖ®ºó£¬Ì¹¿ËµÄĞı×ªµ÷Í·ºÍÒÆ¶¯¶¼»áÓĞÒ»¸öÔË¶¯¹ı³Ì£¬¶ø²»ÊÇÍ»±ä£¡½¥±äµÄ¹ı³ÌÌåÑé»á¸üºÃ<br /><br />
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:16px;">Õâ¸öÊÂÀıÒ²ÊÇ¶ùÊ±Ğ¡ÓÎÏ·µÄÒ»¸öÆô·¢°É Ò²²»ÖªµÀ×öµÄºÃ²»ºÃ Ï£ÍûÄÜ¶ÔÕâ¸ö¡°¹ı¶É¡±Àí½âÓĞ°ïÖú ²»×ãÖ®´¦ »¹ÍûÖ¸Õı</span>
-		<!-- ÊÂÀıËµÃ÷ ½áÊø-->
+		
 
 
 	</div>
-	<!-- main ½áÊø -->
-
-	
-
-
-
+	<!-- main ç»“æŸ -->
 
 	
  </body>

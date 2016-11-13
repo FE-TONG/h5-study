@@ -1,34 +1,29 @@
 <!doctype html>
 <html>
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
-  <meta name="Generator" content="EditPlus"/>
-  <meta name="Author" content=""/>
-  <meta name="Keywords" content=""/>
-  <meta name="Description" content=""/>
-  <title>CSS3--transition</title>
+ 	<meta charset="UTF-8"/>
+  	<title>CSS3--transition</title>
 
 	<style type="text/css">
 		*{margin:0;padding:0;list-style:none;}
-		body{font-size:20px;font-family:"Î¢ÈíÑÅºÚ";}
+		body{font-size:20px;font-family:"microsoft yahei";}
 		a{text-decoration:none;}
 		img{border:none;}
-		div,h2,p{font-family:"Î¢ÈíÑÅºÚ";font-size:24px;}
+		div,h2,p{font-family:"microsoft yahei";font-size:24px;}
 		hr{border:2px dashed red;margin:20px auto;}
 		.hr1{border:1px dashed blue;}
 		h2{font-size:32px;color:blue;}
 		.p0{color:red;}
-		.p1{color:#090;}/*µ­Ä«ÂÌ*/
-		.p2{color:yellow;}/*div:hover ×ÖÌåÑÕÉ«*/
+		.p1{color:#090;}
+		.p2{color:yellow;}
 		.p3{color:blue;}
 
 
 		#main{width:800px;margin:10px auto;border:2px solid #09f; padding-bottom:200px;
 				position:relative; border-radius:10px;}
 
-		/* ÊÖ·çÇÙ1 */
 		#bgd{width:648px; height:350px; margin:50px auto; padding:50px;
-				border-radius:10px;}/*¸¸¼¶ Ïà¶Ô¶¨Î»*/
+				border-radius:10px;}
 
 		.box{width:400px; height:300px; margin:20px auto; border:5px solid #112233; cursor:pointer;					border-radius:5px; background:#112233;}
 
@@ -50,10 +45,10 @@
 		ul.list:hover li{height:30px;}
 		ul.list li:hover{height:180px;}
 
-		/* Ê¸Á¿Í¼ĞÎsvg»­Í¼  ÀàËÆHTML5µÄcanvas */
+	
 		.listImg svg {position:absolute; top:0; left:0;}
 		.listImg svg line{stroke-width:10; stroke:#fff; fill:none; transition:all 1.2s ease-in-out; opacity:0;} 
-		.listImg svg line.top, .listImg svg line.bottom {stroke-dasharray:400 400;}/* »­µÄÊÇĞéÏß */
+		.listImg svg line.top, .listImg svg line.bottom {stroke-dasharray:400 400;}/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 		.listImg svg line.left, .listImg svg line.right {stroke-dasharray:60 60;}
 
 		ul.list li:hover svg line.top {transform:translateX(800px);}
@@ -65,9 +60,8 @@
 		ul.list li:hover svg line.left { opacity:1;}
 		ul.list li:hover svg line.right { opacity:1;}
 
-		/* ÊÖ·çÇÙ1 */
 		
-		/* ÊÖ·çÇÙ2 */
+	
 		#wrap{width:680px; height:240px; overflow:hidden; margin:80px auto;
 			border:6px solid #ddd;}
 
@@ -84,7 +78,7 @@
 		#wrap ul:hover li{width:40px;}
 		#wrap ul li:hover{width:480px;}
 
-		/* ÕÚÕÖ²ã */
+	
 		#wrap p.title1{position:absolute; left:0; top:0; width:113px; height:240px;
 			background:rgba(0,0,0,0.25);
 			-moz-transition:all 0.5s;
@@ -106,7 +100,7 @@
 			-webkit-transition:all 0.5s;
 			transition:all 0.5s;}
 
-		/* ÕÚÕÖ²ãµÄhover */
+		
 		#wrap ul:hover li p.title1{width:40px;}
 		#wrap ul:hover li p.title1 a{width:40px;}
 		#wrap ul li:hover p.title1{width:480px; height:40px; text-align:center; line-height:40px;
@@ -118,37 +112,37 @@
 		#wrap ul li:hover p.title2{width:480px; height:40px; text-align:center; line-height:40px;
 			background:rgba(0,0,0,0.5);}
 		#wrap ul li:hover p.title2 a{width:480px; height:40px; text-align:center; line-height:40px;}
-		/* ÊÖ·çÇÙ2 */
-
-
-
-
-
-
+		
 	</style>
 
  </head>
  <body>
 
-	<!-- main ¿ªÊ¼ -->
+	<!-- main å¼€å§‹ -->
 	<div id="main">
 
-		<!-- ±êÌâ -->
-		<h2><strong>CSS3</strong>~~ÊÖ·çÇÙ</h2><br/>
-		<p>ÊÖ·çÇÙ£¬²»¹Ü²¼¾ÖÔõÃ´±ä£¬Ö÷ÒªË¼Ïë»¹ÊÇÊ×ÏÈÈÃÕû×éÔªËØµÄ¿í¶È(¸ß¶È)¶¼±äÕ­£¬È»ºóÍ¬Ê±±»Ñ¡ÖĞµÄÄÇÒ»¸öÔªËØµÄ¿í¶È(¸ß¶È)±ä¿í¡£</p>
-		<!-- ±êÌâ -->
+		<!-- æ ‡é¢˜ -->
+		<h2><strong>CSS3</strong>~~æ‰‹é£ç´</h2><br/>
+		<p>æ‰‹é£ç´ï¼Œä¸ç®¡å¸ƒå±€æ€ä¹ˆå˜ï¼Œä¸»è¦æ€æƒ³è¿˜æ˜¯é¦–å…ˆè®©æ•´ç»„å…ƒç´ çš„å®½åº¦(é«˜åº¦)éƒ½å˜çª„ï¼Œç„¶ååŒæ—¶è¢«é€‰ä¸­çš„é‚£ä¸€ä¸ªå…ƒç´ çš„å®½åº¦(é«˜åº¦)å˜å®½ã€‚</p>
+		<!-- æ ‡é¢˜ -->
 		<hr style="border:1px dashed#09d;"/>
-		<!-- ÖªÊ¶µãËµÃ÷ ¿ªÊ¼ -->
-		<p class="p0">1¡¢ÊúÖ±</p>
-		<p>Í¼ÎªºĞ×Óbox°ü¹üµÄÒ»×éul liÔªËØ£¬´¹Ö±ÅÅÁĞ£»(ÊµÏÖ²½Öè ÈçÏÂ£º)<br/><br/>(1)µ±Êó±êÒÆµ½Õâ×éÔªËØÉÏÊ±£¬Ã¿¸öliÔªËØ<span class="p0">¸ß¶È</span>Í³Ò»±äÕ­Îª30px£¬<br/>¼´ <span class="p1">ul:hover li{ <span class="p0">height:</span>30px; }</span><br/>(2)Í¬Ê±Êó±êÒÆµ½Ä³Ò»¸öÔªËØÉÏÊ±£¬µ±Ç°Õâ¸öliÔªËØ<span class="p0">¸ß¶È</span>¶À×Ô±ä¿íÎª180px£¬¼´ <span class="p1">ul li:hover{ <span class="p0">height:</span>180px; }</span><br/><br/>ÆäËû²¼¾Ö£ºÃ¿¸öliÖ®¼äµÄ¼ä¸ôÎªÍ·²¿ÄÚÖÃÒ»¸ödiv(ÑÕÉ«²»Í¬)£¬<br/>Æäbox-shadow: <span class="p0">inset</span> 0 0 0 5px #112233;</p><br />
-		<p>¹ı¶É£ºul li{<span class="p3">transition:</span> <span class="p0">height</span> 0.5s <span class="p0">ease-in-out</span>;}</p>
-		<!-- ÖªÊ¶µãËµÃ÷ ½áÊø -->
+		<!-- çŸ¥è¯†ç‚¹è¯´æ˜ å¼€å§‹ -->
+		<p class="p0">1ã€ç«–ç›´Ö±</p>
+		<p>å›¾ä¸ºç›’å­boxåŒ…è£¹çš„ä¸€ç»„ul liå…ƒç´ ï¼Œå‚ç›´æ’åˆ—ï¼›(å®ç°æ­¥éª¤ å¦‚ä¸‹ï¼š)<br/><br/>(1)å½“é¼ æ ‡ç§»åˆ°è¿™ç»„å…ƒç´ ä¸Šæ—¶ï¼Œæ¯ä¸ªliå…ƒç´ 
+			<span class="p0">é«˜åº¦</span>ç»Ÿä¸€å˜çª„ä¸º30pxï¼Œ<br/>å³ <span class="p1">ul:hover li{ <span class="p0">height:</span>30px; }</span><br/>(2)åŒæ—¶é¼ æ ‡ç§»åˆ°æŸä¸€ä¸ªå…ƒç´ ä¸Šæ—¶ï¼Œå½“å‰è¿™ä¸ªliå…ƒç´ 
+			<span class="p0">é«˜åº¦</span>ç‹¬è‡ªå˜å®½ä¸º180pxï¼Œå³ <span class="p1">ul li:hover{ <span class="p0">height:</span>180px; }</span><br/><br/>å…¶ä»–å¸ƒå±€ï¼šæ¯ä¸ªliä¹‹é—´çš„é—´éš”ä¸ºå¤´éƒ¨å†…ç½®ä¸€ä¸ªdiv(é¢œè‰²ä¸åŒ)ï¼Œ<br/>å…¶box-shadow: 
+			<span class="p0">inset</span> 0 0 0 5px #112233;</p><br />
+		<p>è¿‡æ¸¡ï¼šul li{
+			<span class="p3">transition:</span> 
+			<span class="p0">height</span> 0.5s 
+			<span class="p0">ease-in-out</span>;}</p>
+		<!-- çŸ¥è¯†ç‚¹è¯´æ˜ ç»“æŸ -->
 		
 		<div id="bgd">
 			<div class="box">
 				<ul class="list">
 					<li>
-						<p class="listImg pic1"><!-- svg »­ËÄÖÜµÄËÄÌõÏß -->
+						<p class="listImg pic1"><!-- svg ç”»å››å‘¨çš„å››æ¡çº¿ -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
 								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
 								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
@@ -160,7 +154,7 @@
 						<div class="listCon"><img src="http://image.zcool.com.cn/62/7/m_1246880812502.jpg" width="400" height="120" /></div>
 					</li>
 					<li>
-						<p class="listImg pic2"><!-- svg »­ËÄÖÜµÄËÄÌõÏß -->
+						<p class="listImg pic2"><!-- svg ç”»å››å‘¨çš„å››æ¡çº¿ -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
 								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
 								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
@@ -172,7 +166,7 @@
 						<div class="listCon"><img src="http://zcimg.zcool.com.cn/zcimg/b_625c543131430000016840f10119.jpg" width="400" height="120" /></div>
 					</li>
 					<li>
-						<p class="listImg pic3"><!-- svg »­ËÄÖÜµÄËÄÌõÏß -->
+						<p class="listImg pic3"><!-- svg ç”»å››å‘¨çš„å››æ¡çº¿ -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
 								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
 								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
@@ -184,7 +178,7 @@
 						<div class="listCon"><img src="http://zcimg.zcool.com.cn/zcimg/b_4b8453b58b730000015fdf4ec950.jpg"" width="400" height="120" /></div>
 					</li>
 					<li>
-						<p class="listImg pic4"><!-- svg »­ËÄÖÜµÄËÄÌõÏß -->
+						<p class="listImg pic4"><!-- svg ç”»å››å‘¨çš„å››æ¡çº¿ -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
 								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
 								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
@@ -196,7 +190,7 @@
 						<div class="listCon"><img src="http://image.zcool.com.cn/2014/49/51/b_1390200491534.jpg" width="400" height="120" /></div>
 					</li>
 					<li>
-						<p class="listImg pic5"><!-- svg »­ËÄÖÜµÄËÄÌõÏß -->
+						<p class="listImg pic5"><!-- svg ç”»å››å‘¨çš„å››æ¡çº¿ -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
 								<line class="top" x1="400" y1="0" x2="-800" y2="0"></line>
 								<line class="bottom" x1="0" y1="60" x2="1200" y2="60"></line>
@@ -211,18 +205,23 @@
 			</div>
 		</div>
 
-		<p class="p0">2¡¢Ë®Æ½</p>
-		<p>Í¼ÎªºĞ×Ówrap°ü¹üµÄÒ»×éul liÔªËØ£¬Ë®Æ½×ó¸¡¶¯£»(ÊµÏÖ²½Öè ÈçÏÂ£º)<br/><br/>(1)µ±Êó±êÒÆµ½Õâ×éÔªËØÉÏÊ±£¬Ã¿¸öliÔªËØ<span class="p0">¿í¶È</span>Í³Ò»±äÕ­Îª40px£¬<br/>¼´ <span class="p1">ul:hover li{ <span class="p0">width:</span>40px; }</span><br/>(2)Í¬Ê±Êó±êÒÆµ½Ä³Ò»¸öÔªËØÉÏÊ±£¬µ±Ç°Õâ¸öliÔªËØ<span class="p0">¿í¶È</span>¶À×Ô±ä¿íÎª480px£¬¼´ <span class="p1">ul li:hover{ <span class="p0">width:</span>480px; }</span></p><br/>
-		<p>¹ı¶É£ºul li{<span class="p3">transition:</span> <span class="p0">width</span> 0.5s;}</p>
-		<!-- ÊÖ·çÇÙ2 ¿ªÊ¼ -->
+		<p class="p0">2ã€æ°´å¹³</p>
+		<p>å›¾ä¸ºç›’å­wrapåŒ…è£¹çš„ä¸€ç»„ul liå…ƒç´ ï¼Œæ°´å¹³å·¦æµ®åŠ¨ï¼›(å®ç°æ­¥éª¤ å¦‚ä¸‹ï¼š)<br/>
+			<br/>(1)å½“é¼ æ ‡ç§»åˆ°è¿™ç»„å…ƒç´ ä¸Šæ—¶ï¼Œæ¯ä¸ªliå…ƒç´ 
+			<span class="p0">å®½åº¦</span>ç»Ÿä¸€å˜çª„ä¸º40pxï¼Œ<br/>å³ 
+			<span class="p1">ul:hover li{ <span class="p0">width:</span>40px; }</span>
+			<br/>(2)åŒæ—¶é¼ æ ‡ç§»åˆ°æŸä¸€ä¸ªå…ƒç´ ä¸Šæ—¶ï¼Œå½“å‰è¿™ä¸ªliå…ƒç´ <span class="p0">å®½åº¦</span>ç‹¬è‡ªå˜å®½ä¸º480pxï¼Œå³  <span class="p1">ul li:hover{ <span class="p0">width:</span>480px; }</span></p><br/>
+		<p>è¿‡æ¸¡ï¼šul li{
+			<span class="p3">transition:</span> <span class="p0">width</span> 0.5s;}</p>
+		<!-- æ‰‹é£ç´2 å¼€å§‹ -->
 		<div id='wrap'>
 			<ul>
 				<li>	
 					<a href="#">
 						<img  src='http://image.zcool.com.cn/62/7/m_1246880812502.jpg' width="480" height="240">
 					</a>
-					<p class='title1'><a href="#">1</a></p>    <!-- ÉÏÕÚÕÖ²ã -->
-					<p class='title2'><a href="#">1</a></p>		<!-- ÏÂÕÚÕÖ²ã -->
+					<p class='title1'><a href="#">1</a></p>    <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ -->
+					<p class='title2'><a href="#">1</a></p>		<!-- ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ -->
 				</li>
 				<li>
 					<a href="#">
@@ -261,17 +260,8 @@
 				</li>
 			</ul>
 		</div>
-		<!-- ÊÖ·çÇÙ2 ½áÊø -->
-
-
+		<!-- æ‰‹é£ç´2 ç»“æŸ -->
 	</div>
-	<!-- main ½áÊø -->
-
-	
-
-
-
-
-	
+	<!-- main ç»“æŸ -->
  </body>
 </html>

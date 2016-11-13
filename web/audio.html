@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8"/>
+  <title>HTML5~~audio&video</title>
+
+	<style type="text/css">
+	
+		body{font-family:"microsoft yahei";}
+		div,h2,p{font-family:"microsoft yahei";font-size:24px;}
+		hr{border:2px dashed red;margin:20px auto;}
+		.hr1{border:1px dashed blue;}
+		h2{font-size:32px; color:blue;}
+		.p0{color:red;}
+		.p1{color:#090;}
+		.p2{color:yellow;}
+
+
+		#main{width:800px;height:1500px;margin:0px auto;border:2px solid #09f;
+				position:relative; border-radius:10px;}
+
+	
+		#mp4{width:500px; margin:0px auto; background:#222; padding-top:6px;border-radius:5px;}
+		video{width:500px; cursor:pointer; }
+	
+		#btn{width:488px; height:60px; background:#000; margin:0px auto;}
+
+		#btn0{width:50px; height:50px; border:none; outline:none;
+				background:url(images/Prev_Pressed.png) no-repeat; color:#000;	
+				margin:0px 0px 0px 160px; border-radius:25px; cursor:pointer;} 
+		#btn1{width:50px; height:50px; border:none; outline:none; color:#000; margin:5px 5px 0px 10px;
+				background:#ddd; border-radius:3px; background:url(images/Play.png) no-repeat; cursor:pointer;}
+		#btn2{width:50px; height:50px; border:none; outline:none;
+				background:url(images/Next_Pressed.png) no-repeat; color:#000;	
+				margin:0px 0px 0px 2px; border-radius:25px; cursor:pointer;} 
+		#btn0:hover{background:url(images/Prev.png) no-repeat;}
+		#btn2:hover{background:url(images/Next.png) no-repeat;}
+
+	
+		#mp3{width:460px; height:130px; background:#015D55; border-radius:4px;	
+				position:relative; margin:0px auto; border:2px solid black;}
+		#btns{display:inline-block; position:absolute; bottom:14px; right:55px;}
+		#mp3 p{position:absolute; right:120px; top:6px; font-size:20px; color:#fff;}
+		#btn3, #btn4, #btn5, #btn6{border:none; background:#000; color:#fff; padding:5px;
+				cursor:pointer; border-radius:4px; outline:none;}
+		#btn3{margin-left:10px;}
+		#btn3, #btn4{width:40px; height:40px; border-radius:20px;}
+		#btn6{width:62px; height:62px; border-radius:31px;}
+
+		
+		#btn7{width:40px; height:40px; background:blue; border:none;
+				border-radius:20px; color:#fff; cursor:pointer; outline:none;}
+
+
+	</style>
+
+ </head>
+ <body>
+	
+	<div id="main">
+		<h2>HTML5~~audio&video</h2>
+		<p>
+        	<span class="p0">温馨提示:</span>
+            audio&video使用的是MP3、MP4外链，播放的时候可能出现不稳定的情况！但功能仍在
+        </p>
+		<h2>1、audio------------------------------------------ 
+			<input id="btn7" type="button" value="隐藏" />
+		</h2><br /><br />
+		
+		<div id="mp3">
+
+			<img src="http://i2.tietuku.com/338f90057bcfb0be.jpg" width="120" height="120" style="border-radius:4px;
+				border:2px dashed #ccc;padding:3px;"/>
+			<audio id="myAudio" width="500" onclick="pl()" autoplay>
+				<source src="http://sc.111ttt.com/up/mp3/272570/7E995357EE42EACCE4897B737BC17390.mp3" type="audio/mp3"/>
+			</audio>
+			<p>咱们结婚吧 - 齐晨</p>
+			<div id="btns">
+				<input id="btn3" type="button" value="播放" onclick="playMusic()"/>
+				<input id="btn4" type="button" value="暂停" onclick="pauseMusic()"/>
+				<input id="btn5" type="button" value="获取时间" onclick="myPlayTime3()"/>
+				<input id="btn6" type="button" value="播放|暂停" onclick="playPause2()"/>
+			</div>
+			
+		</div><br /><br />
+
+		<h2>2、video</h2>
+
+		<div id="mp4">
+			<video id="myVideo" Poster="http://i2.tietuku.com/832c63053110fad6.png" width="500" onclick="p()">
+				<source src="http://dl76.80s.la:920/1408/[邓紫棋]喜欢你/[邓紫棋]喜欢你_bd.mp4" type="video/mp4"/>
+			</video>
+			<div id="btn">
+				<input id="btn0" type="button" value="" onclick="myPlayTime1()"/>
+				<input id="btn1" type="button" value="" onclick="playPause()"/>
+				<input id="btn2" type="button" value="" onclick="myPlayTime2()"/>
+			</div>
+		</div>
+
+		<p style="height:30px; font-size:14px; text-align:center;">点击屏幕亦可操作</p>
+		<p><span class="p0">JS如下:(< input id="btn1" onclick="playPause()"/>)</span><br / ><br / >
+			var myBtn1 = document.getElementById("btn1");<br / >
+			function playPause(){<br / >
+				&nbsp;&nbsp;&nbsp;if(myVideo.paused){<br / >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myVideo.play();<br / >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myBtn1.style.background="url(images/Pause.png) no-repeat";<br / >
+				&nbsp;&nbsp;&nbsp;}else{<br / >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myVideo.pause();<br / >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myBtn1.style.background="url(images/Play.png) no-repeat";<br / >
+				&nbsp;&nbsp;&nbsp;}<br / >
+			}<br / >
+		</p>
+		<span class="p0">Audio  js同理</span>
+		
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+
+	//Video
+		var myVideo = document.getElementById("myVideo");
+		var myBtn1 = document.getElementById("btn1");
+
+		function p(){
+			if(myVideo.paused){
+				myVideo.play();
+				myBtn1.style.background="url(images/Pause.png) no-repeat";	
+			}else{
+				myVideo.pause();
+				myBtn1.style.background="url(images/Play.png) no-repeat";
+			}
+		}
+
+		function playPause(){
+			if(myVideo.paused){
+				myVideo.play();
+				myBtn1.style.background="url(images/Pause.png) no-repeat";
+			}else{
+				myVideo.pause();
+				myBtn1.style.background="url(images/Play.png) no-repeat";
+			}
+		}
+
+		function myPlayTime1(){		
+			myVideo.currentTime=35;			
+		}
+
+		function myPlayTime2(){
+			myVideo.currentTime=65;			
+		}
+
+
+
+	//Audio
+		var myAudio = document.getElementById("myAudio");
+		function playMusic(){
+		
+			myAudio.play();
+
+		};
+		function pauseMusic(){
+		
+			myAudio.pause();
+
+		};
+		function myPlayTime3(){
+			myAudio.currentTime=43;			
+		}
+		function playPause2(){
+			if(myAudio.paused){
+				myAudio.play();
+			}else{
+				myAudio.pause();
+			}
+		}
+
+		
+
+		//隐藏MP3播放器
+
+		window.onload=function(){
+			var message = {
+				show:"显示",
+				hide:"隐藏"
+			}
+			var oBtn7 = document.getElementById("btn7");
+			var oMp3 = document.getElementById("mp3");
+
+			oMp3.style.opacity=1;
+
+			oBtn7.onclick = function showHide(){
+
+				if(oMp3.style.opacity==1){
+					oMp3.style.opacity = 0;
+					this.value = message.show;
+				}else{
+					oMp3.style.opacity = 1;
+					this.value = message.hide;
+				}
+		
+			};
+
+		};
+		
+	
+
+
+
+
+
+	</script>
+
+
+
+
+ </body>
+</html>
+
+	

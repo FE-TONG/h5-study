@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-	<title>ÆË¿ËÅÆĞ§¹û</title>
-	<meta name="keywords" content="ÆË¿ËÅÆĞ§¹û,ÆË¿ËÅÆĞ§¹û,ÆË¿ËÅÆĞ§¹û" />
-	<meta name="description" content="ÆË¿ËÅÆĞ§¹ûÆË¿ËÅÆĞ§¹ûÆË¿ËÅÆĞ§¹ûÆË¿ËÅÆĞ§¹ûÆË¿ËÅÆĞ§¹ûÆË¿ËÅÆĞ§¹û" />
-
+	<meta charset="UTF-8"/>
+	<title>1</title>
 	<style type="text/css">
 		*{margin:0;padding:0;list-style:none;}
-		body{font-size:20px;font-family:"Î¢ÈíÑÅºÚ";}
+		body{font-size:20px;font-family:"microsoft yahei";}
 		a{text-decoration:none;}
 		img{border:none;}
 		div,h2,p{font-size:24px;}
@@ -16,33 +13,31 @@
 		.hr1{border:1px dashed blue;}
 		h2{font-size:32px;color:blue;}
 		.p0{color:red;}
-		.p1{color:#090;}/*µ­Ä«ÂÌ*/
-		.p2{color:yellow;}/*div:hover ×ÖÌåÑÕÉ«*/
-		.p3{color:blue;}									/* ×Ô¶¨Òå×ÖÌå */
+		.p1{color:#090;}
+		.p2{color:yellow;}
+		.p3{color:blue;}									
 		@font-face{font-family:dear5609; src:url(font/Generic_Teenager.ttf);}
 
 
 		#main{width:800px; margin:0px auto; border:2px solid #09f; /* padding-bottom:200px; */
 				position:relative; border-radius:10px; background:#20252B;}
 
-		/* ÊµÀıÒ» */
-		
-		/* ±êÌâÀ¸ */
+
 		p.title{height:50px; background:#20252B;border-bottom:2px solid #EF4900; color:#fff;
 				text-indent:5px;}
-		p.title a{width:140px; height:50px; display:inline-block; background:#EF4900;/* ±êÌâÎÄ×Ö */
+		p.title a{width:140px; height:50px; display:inline-block; background:#EF4900;
 				text-align:center; line-height:50px; color:#fff; font-size:20px;}
-		/* °µÉ«±³¾° */
+
 		.box{width:700px; height:500px; background:#20252B; margin:0px auto; padding:50px;
 				position:relative;}
-		/* ²½ÖèËµÃ÷ */
+		
 		.text{width:240px; height:300px; position:absolute; left:0px; top:0px; padding:40px; color:#fff;}
 		.text p{color:#fff; font-size:14px;}
 		
-		/* ĞéÏß(YÖá) */
+	
 		.line{width:1px; height:460px; border-right:1px dashed #fff; 
 				position:absolute; left:120px; top:-45px; z-index:5;}
-		/* ¿¨Æ¬ */
+	
 		.card{ width:240px; height:350px; position:relative; top:0; left:0;
 				margin:40px 370px; cursor:pointer;
 				transition:all 0.8s linear;
@@ -54,118 +49,104 @@
 		.front, .back{position:absolute;top:0; left:0; border:5px solid #fff;
 				backface-visibility:hidden; transition:all 0.8s linear;}
 		.back p{width:240px; height:350px; text-align:center; line-height:340px;
-				color:#fff; font-size:50px; font-weight:500; font-family:"dear5609";}/* Ó¦ÓÃ×Ô¶¨Òå×ÖÌå */
+				color:#fff; font-size:50px; font-weight:500; font-family:"dear5609";}/* Ó¦ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 		.card:hover .front{transform:rotateY(180deg);}
 		.card:hover .back{transform:rotateY(360deg);}
-		/* ÊµÀıÒ» */
+		
 
-	
-		/* ÊµÀı¶ş */
-		/* ±êÌâÀ¸ */
 		p.title2{height:50px; background:#20252B; border-bottom:2px solid #EF4900; 
 				color:#fff;text-indent:5px;}
-		p.title2 a{width:140px; height:50px; display:inline-block; background:#EF4900;/* ±êÌâÎÄ×Ö */
+		p.title2 a{width:140px; height:50px; display:inline-block; background:#EF4900;/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 				text-align:center; line-height:50px; color:#fff; font-size:20px;}
-		/* box°µÉ«±³¾° */
+		
 		.box2{width:700px; background:#20252B; margin:0px auto; padding:50px; padding-bottom:200px;}
 
-		/* ¿¨Æ¬2 ¼´ Í¼Æ¬¿ò */
+		
 		ul.card2{width:700px; height:350px;  margin:20px 0px; cursor:pointer; border:5px solid #fff;}
 		
 		ul.card2 li{width:100px; height:350px; float:left; position:relative; left:0; top:0;
 
-				transition:all 0.8s linear;					/* ¹ı¶É */
-				transform-style: preserve-3d;				/* 3D³ÊÏÖ */
-				transform:perspective(600px);				/* Í¸ÊÓÊÓ½Ç */
+				transition:all 0.8s linear;					
+				transform-style: preserve-3d;				
+				transform:perspective(600px);				
 
-				-webkit-transition:all 0.8s linear;			/* ¼æÈİWebKit */
-				-webkit-transform-style: preserve-3d;		/* ¼æÈİWebKit */
-				-webkit-transform:perspective(600px);		/* ¼æÈİWebKit */
+				-webkit-transition:all 0.8s linear;			
+				-webkit-transform-style: preserve-3d;		
+				-webkit-transform:perspective(600px);		
 				
 		}
 		ul.card2 li div{width:100px; height:350px; position:absolute;	
-				 backface-visibility:hidden;}				/* Õı·´Á©ÃæµÄ±³ÃæÒş²Ø */
-		ul.card2 li .back2{transform:rotateY(180deg);}		/* ¼ÈÈ»ÊÇ±³Ãæ£¬³õÊ¼¾ÍÊÇ180¶È */
+				 backface-visibility:hidden;}				/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+		ul.card2 li .back2{transform:rotateY(180deg);}		/* ï¿½ï¿½È»ï¿½Ç±ï¿½ï¿½æ£¬ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½180ï¿½ï¿½ */
 
-		ul.card2:hover li{transform:rotateY(180deg);}		/* ·­×ªÕı·´Á©ÃæµÄ¸¸¼¶->li */
+		ul.card2:hover li{transform:rotateY(180deg);}		/* ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½->li */
 
-		/* ¿¨Æ¬2 ¼´ Í¼Æ¬¿ò */
-
-
-		/* ·ÖÎöËµÃ÷ */
 		.text2{padding:40px; color:#fff;}
 		.text2 p{color:#fff; font-size:14px;}
 		
-
-
-
-		/* ÊµÀı¶ş */
-
-
-
 	</style>
 
  </head>
  <body>
 
-	<!-- main ¿ªÊ¼ -->
+	<!-- main å¼€å§‹ -->
 	<div id="main">
 
-		<!-- ±êÌâ --><br/>
-		<h2><strong>CSS3</strong>~~·­×ª¿¨Æ¬</h2><br/>
-		<p style="color:#fff; text-indent:20px;">YÖáĞı×ª£ºrotateY(< angle >) ;</p>
-		<p style="color:#fff; text-indent:20px;">3D³ÊÏÖ£ºtransform-style: flat | preserve-3d ;</p>
-		<p style="color:#fff; text-indent:20px;">Òş²Ø±³Ãæ£ºbackface-visibility: visible | hidden ;</p>
-		<p style="color:#fff; text-indent:20px;">¹ı¶É£ºtransition: all Ê±¼ä ;</p>
-		<p style="color:#fff; text-indent:20px;">Í¸ÊÓ£ºperspective: < length > ; / transform: perspective( length ) ;</p>
-		<!-- ±êÌâ -->
+		<!-- æ ‡é¢˜ --><br/>
+		<h2><strong>CSS3</strong>~~ç¿»è½¬å¡ç‰‡</h2><br/>
+		<p style="color:#fff; text-indent:20px;">Yè½´æ—‹è½¬ï¼šrotateY(< angle >) ;</p>
+		<p style="color:#fff; text-indent:20px;">3Då‘ˆç°ï¼štransform-style: flat | preserve-3d ;</p>
+		<p style="color:#fff; text-indent:20px;">éšè—èƒŒé¢ï¼šbackface-visibility: visible | hidden ;</p>
+		<p style="color:#fff; text-indent:20px;">è¿‡æ¸¡ï¼štransition: all æ—¶é—´ ;</p>
+		<p style="color:#fff; text-indent:20px;">é€è§†ï¼šperspective: < length > ; / transform: perspective( length ) ;</p>
+		<!-- æ ‡é¢˜ -->
 		<br />
-		<!-- µÚÒ»¸öÊµÀı -->
+		<!-- ç¬¬ä¸€ä¸ªå®ä¾‹ -->
 
-		<p class="title"><a href="javascript:;">1.·­×ª¿¨Æ¬</a></p>
+		<p class="title"><a href="javascript:;">1.ç¿»è½¬å¡ç‰‡</a></p>
 		<div class="box">
-			<!-- ×ó²à²½ÖèËµÃ÷ -->
-			<div class="text">
-				·ÖÎö£º
-				<p>1¡¢</p>
-				<p>½«Õı·´Á½Ãæ¼¯ÖĞÓÚºĞ×ÓcardÖĞ£¬<br/>ÖØµşÔÚÒ»¿é</p>
-				<p>2¡¢</p>
-				<p>ÕıÃæ·­×ª0deg£¬·´Ãæ·­×ª180deg¡£</p>
-				<p>Õı·´Á½Ãæ¶¼Òş²Ø±³Ãæ <br/>backface-visibility: hidden;</p>
-				<p>3¡¢</p>
-				<p>ÔªËØ3D¿Õ¼ä³ÊÏÖ£¬¼´£º<br/>transform-style: preserve-3d;</p>
-				<p>4¡¢</p>
-				<p>·­×ªÕûÕÅ¿¨Æ¬£¬<br/>.card: hover<br/>{transform:rotateY(180deg);}</p>
-				<p>&¡¢</p>
-				<p>¹ı¶É<br/>transition: all 0.8s linear;</p>
-				<p>&¡¢</p>
-				<p>Í¸ÊÓ(²é¿´3DÊÓÍ¼)<br/>perspective: 800px;</p>
-				<p>&¡¢</p>
-				<p>×Ô¶¨Òå×ÖÌå(±³Ãæ)</p>
+			<!-- å·¦ä¾§æ­¥éª¤è¯´æ˜ -->
+			<div class="text">			
+				åˆ†æï¼š
+				<p>1ã€</p>
+				<p>å°†æ­£åä¸¤é¢é›†ä¸­äºç›’å­cardä¸­ï¼Œ<br/>é‡å åœ¨ä¸€å—</p>
+				<p>2ã€</p>
+				<p>æ­£é¢ç¿»è½¬0degï¼Œåé¢ç¿»è½¬180degã€‚</p>
+				<p>æ­£åä¸¤é¢éƒ½éšè—èƒŒé¢ <br/>backface-visibility: hidden;</p>
+				<p>3ã€</p>
+				<p>å…ƒç´ 3Dç©ºé—´å‘ˆç°ï¼Œå³ï¼š<br/>transform-style: preserve-3d;</p>
+				<p>4ã€</p>
+				<p>ç¿»è½¬æ•´å¼ å¡ç‰‡ï¼Œ<br/>.card: hover<br/>{transform:rotateY(180deg);}</p>
+				<p>5ã€</p>
+				<p>è¿‡æ¸¡<br/>transition: all 0.8s linear;</p>
+				<p>6ã€</p>
+				<p>é€è§†(æŸ¥çœ‹3Dè§†å›¾)<br/>perspective: 800px;</p>
+				<p>7ã€</p>
+				<p>è‡ªå®šä¹‰å­—ä½“(èƒŒé¢)</p>
 			</div>
-			<!-- ×ó²à²½ÖèËµÃ÷ -->
-			<!-- ¿¨Æ¬¿ªÊ¼ -->
+			<!-- å·¦ä¾§æ­¥éª¤è¯´æ˜ -->
+			<!-- å¡ç‰‡å¼€å§‹ -->
 			<div class="card">
 				<div class="line"></div>
-				<!--¿¨Æ¬Ç°Ãæ-->
+				<!--å¡ç‰‡å‰é¢-->
 				<div class="front">
 					<img src="images/card.jpg" width="240" height="350" />
 				</div>
-				<!--¿¨Æ¬±³Ãæ-->
+				<!--å¡ç‰‡èƒŒé¢-->
 				<div class="back">
 					<p>rotateY( )</P>
 				</div>
 			</div>
-			<!-- ¿¨Æ¬½áÊø -->
+			<!-- å¡ç‰‡ç»“æŸ -->
 		</div>
-		<!-- µÚÒ»¸öÊµÀı -->
+		<!-- ç¬¬ä¸€ä¸ªå®ä¾‹ -->
 
-		<!-- µÚ¶ş¸öÊµÀı -->
+		<!-- ç¬¬äºŒä¸ªå®ä¾‹ -->
 
-		<p class="title2"><a href="javascript:;">2.·­×ªÍ¼Æ¬</a></p>
+		<p class="title2"><a href="javascript:;">2.ç¿»è½¬å›¾ç‰‡</a></p>
 		<div class="box2">
-			<!-- Í¼Æ¬¿ò¿ªÊ¼ -->
+			<!-- å›¾ç‰‡æ¡†å¼€å§‹ -->
 			<ul class="card2">
 				<li>
 					<div class="front2" style="background:url(images/bac1.jpg) 0px 0px;"></div>
@@ -196,33 +177,28 @@
 					<div class="back2" style="background:url(images/bac2.jpg) -600px 0px;"></div>
 				</li>
 			</ul>
-			<!-- Í¼Æ¬¿ò½áÊø -->
+			<!-- å›¾ç‰‡æ¡†ç»“æŸ -->
 
 			<div class="text2">
-				²½Öè£º
-				<p>1¡¢</p>
-				<p>¹¹½¨Ò»¸öÎŞĞèÁĞ±í£¬ulÎªÕû¸öÍ¼Æ¬¿ò£¬ulÄÚË®Æ½×ó¸¡¶¯7¸öli£¬Ã¿¸öliÏÔÊ¾Í¼Æ¬µÄ²»Í¬Î»ÖÃ</p>
-				<p>2¡¢</p>
-				<p>Ã¿¸öliÄÚ¶¼¹¹½¨Á©div£¬Ò»¸öÎªÕıÃæfront£¬Áí¸öÎª·´Ãæback</p>
-				<p>Õı·´Á½¸ödiv¶¼Òş²Ø±³Ãæ£¬backface-visibility: hidden;</p>
-				<p>3¡¢</p>
-				<p>liÖĞ(Õı·´Ãæ¸¸¼¶)3D¿Õ¼ä³ÊÏÖ£¬¼´£ºtransform-style: preserve-3d;</p>
-				<p>4¡¢</p>
-				<p>Êó±êhoverÍ¼Æ¬¿òul ·­×ªli£¬ul: hover li{transform:rotateY(180deg);}</p>
-				<p>&¡¢</p>
-				<p>·­×ªÔªËØliµÄ¹ı¶É transition: all 0.8s linear;</p>
-				<p>&¡¢</p>
-				<p>Í¸ÊÓ(²é¿´3DÊÓÍ¼)perspective: 600px;</p>
+				æ­¥éª¤ï¼š
+				<p>1ã€</p>
+				<p>æ„å»ºä¸€ä¸ªæ— éœ€åˆ—è¡¨ï¼Œulä¸ºæ•´ä¸ªå›¾ç‰‡æ¡†ï¼Œulå†…æ°´å¹³å·¦æµ®åŠ¨7ä¸ªliï¼Œæ¯ä¸ªliæ˜¾ç¤ºå›¾ç‰‡çš„ä¸åŒä½ç½®</p>
+				<p>2ã€</p>
+				<p>æ¯ä¸ªliå†…éƒ½æ„å»ºä¿©divï¼Œä¸€ä¸ªä¸ºæ­£é¢frontï¼Œå¦ä¸ªä¸ºåé¢back</p>
+				<p>æ­£åä¸¤ä¸ªdivéƒ½éšè—èƒŒé¢ï¼Œbackface-visibility: hidden;</p>
+				<p>3ã€</p>
+				<p>liä¸­(æ­£åé¢çˆ¶çº§)3Dç©ºé—´å‘ˆç°ï¼Œå³ï¼štransform-style: preserve-3d;</p>
+				<p>4ã€</p>
+				<p>é¼ æ ‡hoverå›¾ç‰‡æ¡†ul ç¿»è½¬liï¼Œul: hover li{transform:rotateY(180deg);}</p>
+				<p>5ã€</p>
+				<p>ç¿»è½¬å…ƒç´ liçš„è¿‡æ¸¡ transition: all 0.8s linear;</p>
+				<p>6ã€</p>
+				<p>é€è§†(æŸ¥çœ‹3Dè§†å›¾)perspective: 600px;</p>
 			</div>
 
 		</div>
-		<!-- µÚ¶ş¸öÊµÀı½áÊø -->
-
-		
-
-
+		<!-- ç¬¬äºŒä¸ªå®ä¾‹ç»“æŸ -->
 	</div>
-	<!-- main ½áÊø -->
-
+	<!-- main ç»“æŸ -->
  </body>
 </html>
