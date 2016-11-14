@@ -1,0 +1,357 @@
+<html>
+<head>
+<title>21点游戏</title>
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+<style type="text/css">
+<!--
+.zf {  border: #999999; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+-->
+</style>
+</head>
+<body bgcolor=#FFFFFF>
+<div align="center" > 
+    <tr> 
+    </tr>
+  </table>
+  <table width="770" border="0" cellspacing="0" cellpadding="0" class="zf1">
+    <tr>
+        <tr>
+ <SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function addbookmark()
+{
+bookmarkurl="http://www.codefans.net"
+bookmarktitle="欢迎光临源码爱好者"
+if (document.all)
+window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+//  End -->
+</script>
+</div></td>
+          </tr>
+          <tr>
+            <td height="15"><div align="center"><span  onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.codefans.net');"  style="CURSOR: hand"> 设为首页</a></span></div></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+   <table width="770" border="0" cellspacing="0" cellpadding="0" class="zf1">
+    <tr> 
+      <td  height="20"><table width="768" height="19" border="0" align="center" cellpadding="0" cellspacing="0">    
+       </table></td>
+    </tr>
+  </table>
+  <table width="770" border="0" cellspacing="0" cellpadding="0" bgcolor="#CCCCCC"class="zf1">
+    <tr>
+      <td class="zf3"><script language="JavaScript">
+<!--
+var enabled = 0; today = new Date();
+var day; var date;
+if(today.getDay()==0) day = "星期日"
+if(today.getDay()==1) day = "星期一"
+if(today.getDay()==2) day = "星期二"
+if(today.getDay()==3) day = "星期三"
+if(today.getDay()==4) day = "星期四"
+if(today.getDay()==5) day = "星期五"
+if(today.getDay()==6) day = "星期六"
+date = "" + (today.getYear()) + "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日  " + day +"";
+document.write("<font color=black>" + date + "</font>");
+-->
+</script></td><td align=right></td>
+    </tr>
+  </table>
+  <table width="770" border="0" cellspacing="0" cellpadding="0" >
+    <tr>
+      <td height="2"></td>
+    </tr>
+  </table>
+  <table width="770" border="0" cellspacing="10" cellpadding="0" bgcolor="#CCCCCC">
+    <tr> 
+      <td bgcolor="#FFFFFF" height="501" valign="top"> 
+        <div align="center"> <br>
+ <table width="700" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="200">&nbsp;</td>
+              <td> 
+                <table width="300" border="1" cellspacing="0" cellpadding="0" align="center">
+                  <tr> 
+                    <td bgcolor="#CCCCCC" height="20" width="15">&nbsp;</td>
+                    <td bgcolor="#999999" height="20" width="260"> 
+					
+                      <div align="center"><font color="#FFFFFF" size="3">21点游戏</font></div>
+                    </td>
+                    <td bgcolor="#CCCCCC" height="20" width="17">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+              <td width="10"></td>
+            </tr>
+          </table>
+          <br>
+          <fieldset style="width:500;height:50"><legend>效果显示区</legend> 
+         
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Hide from non-JavaScript browsers
+
+function random(maxValue)
+
+{
+
+   day = new Date();
+
+   hour = day.getHours();
+
+   min = day.getMinutes();
+
+   sec = day.getSeconds();
+
+   return (((hour + 1) * (min + 1) * sec) % maxValue) + 1;
+
+}
+
+
+
+function pickSuit()
+
+{
+
+   suit = random(4);
+
+
+
+   if(suit == 1)
+
+      return "Spades";
+
+
+
+   if(suit == 2)
+
+      return "Clubs";
+
+
+
+   if(suit == 3)
+
+      return "Diamonds";
+
+
+
+   return "Hearts";
+
+}
+
+
+
+function cardName(card)
+
+{
+
+   if(card == 1)
+
+      return "Ace";
+
+
+
+   if(card == 11)
+
+      return "Jack";
+
+
+
+   if(card == 12)
+
+      return "Queen";
+
+
+
+   if(card == 13)
+
+      return "King";
+
+
+
+   return "" + card;
+
+}
+
+
+
+function cardValue(card)
+
+{
+
+   if(card == 1)
+
+      return 11;
+
+
+
+   if(card > 10)
+
+      return 10;
+
+
+
+   return card;
+
+}
+
+
+
+function PickACard(strWho)
+
+{
+
+   card = random(13);
+
+   suit = pickSuit();
+
+
+
+   //alert(strWho + " picked the " + cardName(card) + " of " + suit);
+
+
+
+   return cardValue(card);
+
+}
+
+
+
+function NewHand(form)
+
+{
+
+   form.dealer.value = 0;
+
+   form.you.value = 0;
+
+
+
+   form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");
+
+   form.you.value = eval(form.you.value) + PickACard("You");
+
+}
+
+
+
+function Dealer(form)
+
+{
+
+   while(form.dealer.value < 17)
+
+   {
+
+      form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");
+
+   }
+
+}
+
+
+
+function User(form)
+
+{
+
+   form.you.value = eval(form.you.value) + PickACard("You");
+
+
+
+   if(form.you.value > 21)
+
+   {
+
+      alert("不好意思，你爆了!");
+
+   }
+
+}
+
+
+
+function LookAtHands(form)
+
+{
+
+   if(form.dealer.value > 21)
+
+   {
+
+      alert("庄家爆了，你赢!");
+
+   }
+
+   else   if(form.you.value > form.dealer.value)
+
+   {
+
+      alert("你赢了!");
+
+   }
+
+   else
+
+   if(form.dealer.value == form.you.value)
+
+   {
+
+      alert("Push!");
+
+   }
+
+   else
+
+   {
+
+      alert("庄家赢了!");
+
+   }
+
+}
+
+//-->
+
+</SCRIPT>
+<FORM>
+<TABLE BORDER=3>
+<TR>
+  <TD>庄家有</TD>
+  <TD><INPUT TYPE=TEXT NAME=dealer>点</TD>
+</TR>
+<TR> <TD>你有</TD>
+  <TD><INPUT TYPE=TEXT NAME=you>点</TD>
+</TR>
+</TABLE>
+<INPUT TYPE=BUTTON VALUE="再要一张" onClick=User(this.form)>
+<INPUT TYPE=BUTTON VALUE="亮牌" onClick="Dealer(this.form);LookAtHands(this.form);">
+<INPUT TYPE=BUTTON VALUE="重新发牌" onClick=NewHand(this.form)>
+</fieldset>
+
+<br><br><br>
+          <table width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>
+                 </td>
+            </tr>
+            <tr>
+              <td class="zf">
+                    </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <hr width="770">
+   </div>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21点</title>
+</head>
+<body>
+	<button id="an">要牌</button>
+    <script>   
+		"use strict"
+		//寄生组合式继承
+		function inheritPrototype(subType,superType,newAddProto){
+			var prototype = superType.prototype;
+			for(var prop in newAddProto){
+				prototype[prop] = newAddProto[prop]
+			}
+			prototype.constructor = subType;
+			subType.prototype = prototype;
+		}
+		
+       /* Function.prototype.extends = function(xxx,iii){
+            for(var prop in xxx.prototype){
+                this.prototype[prop] = xxx.prototype[prop];     
+            };
+            for(var p in iii){
+                this.prototype[p] = iii[p];
+            };
+        }*/
+        function Player(name){
+            this.name = name;
+            this.point = 0;
+            this.cards = [];
+        };
+       
+        Player.prototype = {
+            //收到一张牌
+            putCard : function(card){
+                this.cards.push(card);
+            },
+            //获得当前的总点数并且返回出去
+            getPoint : function(flag){
+                //代表的是给出明牌的点数（comp用）
+                var sum = 0;
+                //代表的是给出所有牌的点数（game用）
+                for(var i=flag?1:0; i<this.cards.length; i++){
+                    sum += this.cards[i].point;
+                };
+                return sum
+            },
+            //是否要牌，抽象方法，因为人脑和电脑的判断逻辑不同
+            isNeedCard : function(){
+				
+            }     
+        };
+        function User(name){
+            Player.call(this,name);
+        }
+        function Computer(name){
+        	Player.call(this,name);
+        }
+       	var userPrototype = {
+       		isNeedCard:function(){
+	       		
+	       		return true;
+	       	}
+       	};
+       	var comPrototype = {
+       		isNeedCard:function(){
+	       		
+	       		return false;
+	       	}
+       	}
+       	inheritPrototype(User,Player,userPrototype);
+       	inheritPrototype(Computer,Player,comPrototype);
+        
+        function Game21Point(user,compCount,pukeCount){
+            this.user = user;
+            this.compCount = compCount;
+            this.players = [];
+            pukeCount = pukeCount || 1;
+            this.puke = new Puke(pukeCount);
+            this.init();
+        };
+        Game21Point.prototype = {
+            init : function(){
+                this.players.push(this.user);
+                this.players.push(this.compCount);
+                for(var i=0; i<this.players.length; i++){
+                	this.players[i].putCard(this.puke.sendCard());
+                	this.players[i].putCard(this.puke.sendCard());
+                	console.log(this.players[i])
+                }
+                console.log(this.puke);
+                console.log(this.players);
+            }
+        }
+        //派牌的功能（前提是某个玩家要牌）
+        //裁决的功能，点数>21点，这个玩家就出局（状态位）
+        //如果庄家（玩家）是21点，那么游戏提前结束
+        
+        //洗牌的功能  shuffle = sort随机排序
+        //抽一张牌的功能 cards.pop()（抽完一张牌，cards里面就要少一个牌）
+        function Puke(count) { 
+            this.cards = [];
+            this.init();//初始化扑克
+        }
+        Puke.prototype = {
+            init : function() {
+                for (var i = 1; i <= 4; i++) {
+                    for (var j = 1; j <= 13; j++) {
+                        this.cards.push({
+                            "point" : j>10?10:j,
+                            "color" : i,
+                            "src" : "images/"+i+"/"+j+".jpg"
+                        })
+                    };
+                };
+                this.shuffle();
+                
+            },
+            shuffle : function() {
+                this.cards.sort(function(c1,c2){
+                    //乱序排序，随机数
+                    var random = (Math.random()*100<<2)%3-1;
+                    return random;
+                });
+            },
+            sendCard : function(){
+                if(this.cards.length==0){
+                    this.init();
+                }
+                return this.cards.pop();
+            }
+        	
+        }
+        window.onload = function(){
+           
+            var us = new User("神");
+            var comp = new Computer("大比克");
+            var game = new Game21Point(us, comp, 1)
+            console.log(us)
+            console.log(User.prototype);
+          	document.getElementById("an").onclick = function(){
+          		
+          	}
+        }
+    </script>
+</body>
+</html>
